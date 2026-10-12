@@ -9,7 +9,7 @@
     <Shape ID="DesignTable:Categories" ZOrder="12" X="336" Y="554" Height="134" Width="206" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="83" />
     <Shape ID="DesignTable:Orders" ZOrder="11" X="621" Y="70" Height="153" Width="183" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="102" />
     <Shape ID="DesignTable:OrdersItems" ZOrder="10" X="336" Y="70" Height="172" Width="215" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
-    <Shape ID="DesignTable:Products" ZOrder="9" X="70" Y="70" Height="210" Width="196" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="159" />
+    <Shape ID="DesignTable:Products" ZOrder="9" X="70" Y="70" Height="286" Width="196" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="199" />
     <Shape ID="DesignTable:ProductViews" ZOrder="8" X="336" Y="312" Height="153" Width="224" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="102" />
     <Shape ID="DesignTable:Users" ZOrder="1" X="630" Y="312" Height="267" Width="299" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
   </Shapes>
@@ -62,7 +62,7 @@
         </Point>
         <Point>
           <X>241</X>
-          <Y>280</Y>
+          <Y>356</Y>
         </Point>
       </RoutePoints>
     </Connector>
@@ -70,15 +70,15 @@
       <RoutePoints>
         <Point>
           <X>249</X>
-          <Y>280</Y>
+          <Y>356</Y>
         </Point>
         <Point>
           <X>249</X>
-          <Y>329</Y>
+          <Y>364</Y>
         </Point>
         <Point>
           <X>336</X>
-          <Y>329</Y>
+          <Y>364</Y>
         </Point>
       </RoutePoints>
     </Connector>

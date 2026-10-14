@@ -1,0 +1,213 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Material3.Core</name>
+    </assembly>
+    <members>
+        <member name="T:Material3.Core.Argb">
+            <summary>
+            A 32-bit sRGB color (8 bits each of alpha/red/green/blue). The engine's UI-neutral color type:
+            Core has no dependency on System.Drawing or System.Windows, so the UI packages adapt at their
+            boundary (<c>Argb.ToGdi()</c> for WinForms, <c>Argb.ToMedia()</c> for WPF). The member surface
+            mirrors the subset of <c>System.Drawing.Color</c> the engine used, so the math ported unchanged.
+            </summary>
+        </member>
+        <member name="M:Material3.Core.Argb.FromArgb(System.Int32,System.Int32,System.Int32)">
+            <summary>Opaque color from channels (each clamped to 0–255).</summary>
+        </member>
+        <member name="M:Material3.Core.Argb.FromArgb(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>Color from channels including alpha (each clamped to 0–255).</summary>
+        </member>
+        <member name="M:Material3.Core.Argb.ToInt">
+            <summary>Packs to 0xAARRGGBB.</summary>
+        </member>
+        <member name="M:Material3.Core.Argb.FromInt(System.Int32)">
+            <summary>Unpacks from 0xAARRGGBB.</summary>
+        </member>
+        <member name="M:Material3.Core.Argb.ToString">
+            <summary>"#AARRGGBB" — for debugging and gallery swatches.</summary>
+        </member>
+        <member name="T:Material3.Core.Cam16">
+            <summary>
+            CAM16 color appearance model — forward (color → appearance attributes) and inverse
+            (attributes → color) transforms under standard viewing conditions. Ported from Google's
+            material-color-utilities (Apache 2.0). Only the attributes the HCT solver needs are kept.
+            </summary>
+        </member>
+        <member name="M:Material3.Core.Cam16.ToColor(System.Double,System.Double,System.Double)">
+            <summary>
+            Inverse model: appearance attributes (J, chroma, hue) → sRGB color. Out-of-gamut
+            component values are clamped, which the HCT solver exploits for gamut mapping.
+            </summary>
+        </member>
+        <member name="T:Material3.Core.ViewingConditions">
+            <summary>
+            Standard ("average surround") viewing conditions all conversions use; computed once.
+            Matches material-color-utilities ViewingConditions.DEFAULT.
+            </summary>
+        </member>
+        <member name="T:Material3.Core.ColorScheme">
+            <summary>
+            A complete set of Material 3 color roles for one theme (light or dark), produced from a
+            <see cref="T:Material3.Core.CorePalette"/> with the standard M3 tone mappings. Immutable — switching themes
+            means swapping the whole scheme via <see cref="!:ThemeManager"/>.
+            </summary>
+        </member>
+        <member name="P:Material3.Core.ColorScheme.IsDark">
+            <summary>True when this scheme uses the dark tone mapping.</summary>
+        </member>
+        <member name="P:Material3.Core.ColorScheme.OnSurfaceMuted">
+            <summary>Dimmer than OnSurfaceVariant, for tertiary text — a library extension (third text level).</summary>
+        </member>
+        <member name="P:Material3.Core.ColorScheme.SurfaceTint">
+            <summary>Surface tint color used by elevation overlays — always Primary in M3.</summary>
+        </member>
+        <member name="M:Material3.Core.ColorScheme.Light(Material3.Core.CorePalette)">
+            <summary>Builds the light scheme from a core palette (standard M3 tone mapping).</summary>
+        </member>
+        <member name="M:Material3.Core.ColorScheme.Dark(Material3.Core.CorePalette)">
+            <summary>Builds the dark scheme from a core palette (standard M3 tone mapping).</summary>
+        </member>
+        <member name="M:Material3.Core.ColorScheme.Overlay(Material3.Core.Argb,Material3.Core.Argb,System.Double)">
+            <summary>Composites a translucent state-layer color over a solid base (M3 hover/press overlays).</summary>
+        </member>
+        <member name="T:Material3.Core.ColorUtils">
+            <summary>
+            sRGB / XYZ / L* conversions used by the CAM16 pipeline. Ported from Google's
+            material-color-utilities (Apache 2.0); kept numerically identical so palettes match
+            the reference implementation across platforms.
+            </summary>
+        </member>
+        <member name="M:Material3.Core.ColorUtils.Linearized(System.Int32)">
+            <summary>Linearizes one sRGB channel (0–255) to 0–100.</summary>
+        </member>
+        <member name="M:Material3.Core.ColorUtils.Delinearized(System.Double)">
+            <summary>Delinearizes one channel (0–100) back to sRGB 0–255 with rounding and clamping.</summary>
+        </member>
+        <member name="M:Material3.Core.ColorUtils.LstarFromColor(Material3.Core.Argb)">
+            <summary>CIE L* (perceptual lightness, 0–100) of an sRGB color.</summary>
+        </member>
+        <member name="M:Material3.Core.ColorUtils.YFromLstar(System.Double)">
+            <summary>Y (relative luminance, 0–100) for a given L*.</summary>
+        </member>
+        <member name="M:Material3.Core.ColorUtils.ColorFromLstar(System.Double)">
+            <summary>Pure grey sRGB color with the given L*.</summary>
+        </member>
+        <member name="M:Material3.Core.ColorUtils.ColorFromLinrgb(System.Double[])">
+            <summary>sRGB color from linear-RGB channels (0–100), each delinearized independently.</summary>
+        </member>
+        <member name="T:Material3.Core.SchemeVariant">
+            <summary>
+            Controls how much chroma the generated palettes carry relative to the seed color.
+            </summary>
+        </member>
+        <member name="F:Material3.Core.SchemeVariant.TonalSpot">
+            <summary>Standard Material 3 "tonal spot": vibrant primary, calmer secondary/tertiary.</summary>
+        </member>
+        <member name="F:Material3.Core.SchemeVariant.Neutral">
+            <summary>
+            Nearly monochrome scheme (subtle tint of the seed hue everywhere) — the look of the
+            original "Platinum" theme this library grew out of.
+            </summary>
+        </member>
+        <member name="F:Material3.Core.SchemeVariant.Vibrant">
+            <summary>Maximum-chroma "fidelity-like" variant that keeps the seed's own chroma.</summary>
+        </member>
+        <member name="T:Material3.Core.CorePalette">
+            <summary>
+            The six tonal palettes every Material 3 scheme is built from, derived from one seed color.
+            Tone mappings to actual color roles live in <see cref="T:Material3.Core.ColorScheme"/>.
+            </summary>
+        </member>
+        <member name="M:Material3.Core.CorePalette.FromSeed(Material3.Core.Argb,Material3.Core.SchemeVariant)">
+            <summary>Derives all palettes from a seed color.</summary>
+        </member>
+        <member name="T:Material3.Core.Hct">
+             <summary>
+             A color in the HCT color space: Hue (0–360), Chroma (0–~150, gamut-dependent) and Tone
+             (CIE L*, 0–100). HCT is the foundation of Material 3 dynamic color: tonal palettes are
+             produced by holding hue/chroma constant and varying tone.
+            
+             Requesting an out-of-gamut chroma is allowed — the solver returns the closest in-gamut
+             color at the requested hue and tone, which is exactly the behavior tonal palettes rely on.
+             </summary>
+        </member>
+        <member name="P:Material3.Core.Hct.Hue">
+            <summary>Hue in degrees, 0–360.</summary>
+        </member>
+        <member name="P:Material3.Core.Hct.Chroma">
+            <summary>Colorfulness. The achievable maximum depends on hue and tone.</summary>
+        </member>
+        <member name="P:Material3.Core.Hct.Tone">
+            <summary>Lightness (CIE L*), 0 = black, 100 = white.</summary>
+        </member>
+        <member name="M:Material3.Core.Hct.ToColor">
+            <summary>The sRGB color this HCT value maps to.</summary>
+        </member>
+        <member name="M:Material3.Core.Hct.From(System.Double,System.Double,System.Double)">
+            <summary>Creates HCT from hue/chroma/tone, gamut-mapping chroma when needed.</summary>
+        </member>
+        <member name="M:Material3.Core.Hct.FromColor(Material3.Core.Argb)">
+            <summary>Measures the HCT attributes of an existing color.</summary>
+        </member>
+        <member name="T:Material3.Core.HctSolver">
+            <summary>
+            Finds the sRGB color for requested HCT attributes. Analytic port of Google's
+            material-color-utilities <c>HctSolver</c> (Apache 2.0): a Newton iteration on CAM16
+            lightness J finds the exact in-gamut answer; when the requested chroma is out of gamut,
+            it bisects the RGB-cube boundary against precomputed critical planes, returning the
+            maximum achievable chroma at the requested hue and tone.
+            </summary>
+        </member>
+        <member name="T:Material3.Core.MaterialTheme">
+            <summary>
+            A theme = seed color + variant + light/dark. The palette is built up front; each scheme is
+            built on first access and cached, so a mode switch never recomputes the palette and recoloring
+            within one mode never builds the off-mode scheme.
+            </summary>
+        </member>
+        <member name="P:Material3.Core.MaterialTheme.Seed">
+            <summary>Seed the palettes were derived from.</summary>
+        </member>
+        <member name="P:Material3.Core.MaterialTheme.Variant">
+            <summary>Chroma profile of the generated palettes.</summary>
+        </member>
+        <member name="P:Material3.Core.MaterialTheme.Palette">
+            <summary>The palettes themselves — useful for custom roles and gallery swatches.</summary>
+        </member>
+        <member name="P:Material3.Core.MaterialTheme.LightScheme">
+            <summary>Light role mapping. Built on first access: switching seed/hue while in one mode
+            (e.g. dragging the gallery hue slider) never pays for the off-mode scheme.</summary>
+        </member>
+        <member name="P:Material3.Core.MaterialTheme.DarkScheme">
+            <summary>Dark role mapping. Built on first access (see <see cref="P:Material3.Core.MaterialTheme.LightScheme"/>).</summary>
+        </member>
+        <member name="M:Material3.Core.MaterialTheme.FromSeed(Material3.Core.Argb,Material3.Core.SchemeVariant)">
+            <summary>Builds a full light+dark theme from one seed color.</summary>
+        </member>
+        <member name="M:Material3.Core.MaterialTheme.Platinum">
+            <summary>
+            The default grey-violet near-monochrome theme ("Platinum") — chromatic events stay
+            reserved for semantic colors. A good default for tools and installers.
+            </summary>
+        </member>
+        <member name="T:Material3.Core.TonalPalette">
+            <summary>
+            A Material 3 tonal palette: all tones (0–100) of a single hue/chroma pair, computed lazily and
+            cached. Argb roles are defined as specific tones of these palettes.
+            </summary>
+        </member>
+        <member name="P:Material3.Core.TonalPalette.Hue">
+            <summary>Hue of every tone in the palette, degrees 0–360.</summary>
+        </member>
+        <member name="P:Material3.Core.TonalPalette.Chroma">
+            <summary>Target chroma; individual tones may be less chromatic when the gamut runs out.</summary>
+        </member>
+        <member name="M:Material3.Core.TonalPalette.FromColor(Material3.Core.Argb)">
+            <summary>Palette matching the hue and chroma of the given color.</summary>
+        </member>
+        <member name="M:Material3.Core.TonalPalette.Tone(System.Int32)">
+            <summary>The palette color at the given tone (0 = black … 100 = white).</summary>
+        </member>
+    </members>
+</doc>

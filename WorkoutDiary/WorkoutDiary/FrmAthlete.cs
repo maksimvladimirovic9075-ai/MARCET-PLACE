@@ -72,6 +72,10 @@ namespace WorkoutDiary
         }
         private void FrmAthlete_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "workoutDiaryDBDataSet1.ProgramExercisesView". При необходимости она может быть перемещена или удалена.
+            this.programExercisesViewTableAdapter.Fill(this.workoutDiaryDBDataSet1.ProgramExercisesView);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "workoutDiaryDBDataSet1.ProgramView". При необходимости она может быть перемещена или удалена.
+            this.programViewTableAdapter.Fill(this.workoutDiaryDBDataSet1.ProgramView);
 
         }
         private void lblLastWorkout_Click(object sender, EventArgs e)
@@ -99,19 +103,5 @@ namespace WorkoutDiary
             Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panelProfileInfo_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void materialLabel6_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

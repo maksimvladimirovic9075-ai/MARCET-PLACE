@@ -59,6 +59,12 @@
     <Compile Include="FrmAdmin.Designer.cs">
       <DependentUpon>FrmAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmcardUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FrmcardUser.Designer.cs">
+      <DependentUpon>FrmcardUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmLog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +98,9 @@
     </Compile>
     <EmbeddedResource Include="FrmAdmin.resx">
       <DependentUpon>FrmAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmcardUser.resx">
+      <DependentUpon>FrmcardUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLog.resx">
       <DependentUpon>FrmLog.cs</DependentUpon>
@@ -142,6 +151,39 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\tshirt.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tshirt1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Снимок экрана 2026-10-21 091302.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\uprazhnenie-razvedenie-gantelej-lezha-zaj6r05h.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\фото2подтягивания.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Снимок экрана 2026-10-21 094240.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Снимок экрана 2026-10-21 095133.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Снимок экрана 2026-10-21 095423.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Снимок экрана 2026-10-21 095715.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Снимок экрана 2026-10-21 095930.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Снимок экрана 2026-10-21 100244.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Снимок экрана 2026-10-21 100656.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -118,7 +118,40 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Снимок экрана 2026-10-21 095930" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Снимок экрана 2026-10-21 095930.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Снимок экрана 2026-10-21 095423" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Снимок экрана 2026-10-21 095423.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Снимок экрана 2026-10-21 091302" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Снимок экрана 2026-10-21 091302.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="tshirt" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tshirt.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Снимок экрана 2026-10-21 094240" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Снимок экрана 2026-10-21 094240.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Снимок экрана 2026-10-21 100244" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Снимок экрана 2026-10-21 100244.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Снимок экрана 2026-10-21 095715" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Снимок экрана 2026-10-21 095715.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="фото2подтягивания" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\фото2подтягивания.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tshirt1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tshirt1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Снимок экрана 2026-10-21 095133" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Снимок экрана 2026-10-21 095133.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="uprazhnenie-razvedenie-gantelej-lezha-zaj6r05h" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\uprazhnenie-razvedenie-gantelej-lezha-zaj6r05h.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Снимок экрана 2026-10-21 100656" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Снимок экрана 2026-10-21 100656.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

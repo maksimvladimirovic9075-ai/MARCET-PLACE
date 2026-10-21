@@ -587,6 +587,55 @@ WHERE UserId = @UserId</CommandText>
               </DbSource>
             </Sources>
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ProgramViewTableAdapter" GeneratorDataComponentClassName="ProgramViewTableAdapter" Name="ProgramView" UserDataComponentName="ProgramViewTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="WorkoutDiaryDBConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT p.Id, p.Name, p.Description, p.DurationWeeks, u.FullName AS AuthorName
+FROM Programs p
+JOIN Users u ON u.Id = p.AuthorId</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Id" DataSetColumn="Id" />
+              <Mapping SourceColumn="Name" DataSetColumn="Name" />
+              <Mapping SourceColumn="Description" DataSetColumn="Description" />
+              <Mapping SourceColumn="DurationWeeks" DataSetColumn="DurationWeeks" />
+              <Mapping SourceColumn="AuthorName" DataSetColumn="AuthorName" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ProgramExercisesViewTableAdapter" GeneratorDataComponentClassName="ProgramExercisesViewTableAdapter" Name="ProgramExercisesView" UserDataComponentName="ProgramExercisesViewTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="WorkoutDiaryDBConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT pe.Id, pe.ProgramId, pe.DayNumber, pe.OrderNum,
+       e.Name AS ExerciseName, e.Equipment, pe.TargetSets, pe.TargetReps
+FROM ProgramExercises pe
+JOIN Exercises e ON e.Id = pe.ExerciseId
+ORDER BY pe.DayNumber, pe.OrderNum</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Id" DataSetColumn="Id" />
+              <Mapping SourceColumn="ProgramId" DataSetColumn="ProgramId" />
+              <Mapping SourceColumn="DayNumber" DataSetColumn="DayNumber" />
+              <Mapping SourceColumn="OrderNum" DataSetColumn="OrderNum" />
+              <Mapping SourceColumn="ExerciseName" DataSetColumn="ExerciseName" />
+              <Mapping SourceColumn="Equipment" DataSetColumn="Equipment" />
+              <Mapping SourceColumn="TargetSets" DataSetColumn="TargetSets" />
+              <Mapping SourceColumn="TargetReps" DataSetColumn="TargetReps" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -749,6 +798,61 @@ WHERE UserId = @UserId</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="ProgramView" msprop:Generator_RowEvHandlerName="ProgramViewRowChangeEventHandler" msprop:Generator_RowDeletedName="ProgramViewRowDeleted" msprop:Generator_RowDeletingName="ProgramViewRowDeleting" msprop:Generator_RowEvArgName="ProgramViewRowChangeEvent" msprop:Generator_TablePropName="ProgramView" msprop:Generator_RowChangedName="ProgramViewRowChanged" msprop:Generator_RowChangingName="ProgramViewRowChanging" msprop:Generator_TableClassName="ProgramViewDataTable" msprop:Generator_RowClassName="ProgramViewRow" msprop:Generator_TableVarName="tableProgramView" msprop:Generator_UserTableName="ProgramView">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_UserColumnName="Id" type="xs:int" />
+              <xs:element name="Name" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_UserColumnName="Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Description" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_UserColumnName="Description" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DurationWeeks" msprop:Generator_ColumnPropNameInRow="DurationWeeks" msprop:Generator_ColumnPropNameInTable="DurationWeeksColumn" msprop:Generator_ColumnVarNameInTable="columnDurationWeeks" msprop:Generator_UserColumnName="DurationWeeks" type="xs:int" />
+              <xs:element name="AuthorName" msprop:Generator_ColumnPropNameInRow="AuthorName" msprop:Generator_ColumnPropNameInTable="AuthorNameColumn" msprop:Generator_ColumnVarNameInTable="columnAuthorName" msprop:Generator_UserColumnName="AuthorName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ProgramExercisesView" msprop:Generator_RowEvHandlerName="ProgramExercisesViewRowChangeEventHandler" msprop:Generator_RowDeletedName="ProgramExercisesViewRowDeleted" msprop:Generator_RowDeletingName="ProgramExercisesViewRowDeleting" msprop:Generator_RowEvArgName="ProgramExercisesViewRowChangeEvent" msprop:Generator_TablePropName="ProgramExercisesView" msprop:Generator_RowChangedName="ProgramExercisesViewRowChanged" msprop:Generator_RowChangingName="ProgramExercisesViewRowChanging" msprop:Generator_TableClassName="ProgramExercisesViewDataTable" msprop:Generator_RowClassName="ProgramExercisesViewRow" msprop:Generator_TableVarName="tableProgramExercisesView" msprop:Generator_UserTableName="ProgramExercisesView">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_UserColumnName="Id" type="xs:int" />
+              <xs:element name="ProgramId" msprop:Generator_ColumnPropNameInRow="ProgramId" msprop:Generator_ColumnPropNameInTable="ProgramIdColumn" msprop:Generator_ColumnVarNameInTable="columnProgramId" msprop:Generator_UserColumnName="ProgramId" type="xs:int" />
+              <xs:element name="DayNumber" msprop:Generator_ColumnPropNameInRow="DayNumber" msprop:Generator_ColumnPropNameInTable="DayNumberColumn" msprop:Generator_ColumnVarNameInTable="columnDayNumber" msprop:Generator_UserColumnName="DayNumber" type="xs:int" />
+              <xs:element name="OrderNum" msprop:Generator_ColumnPropNameInRow="OrderNum" msprop:Generator_ColumnPropNameInTable="OrderNumColumn" msprop:Generator_ColumnVarNameInTable="columnOrderNum" msprop:Generator_UserColumnName="OrderNum" type="xs:int" />
+              <xs:element name="ExerciseName" msprop:Generator_ColumnPropNameInRow="ExerciseName" msprop:Generator_ColumnPropNameInTable="ExerciseNameColumn" msprop:Generator_ColumnVarNameInTable="columnExerciseName" msprop:Generator_UserColumnName="ExerciseName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Equipment" msprop:Generator_ColumnPropNameInRow="Equipment" msprop:Generator_ColumnPropNameInTable="EquipmentColumn" msprop:Generator_ColumnVarNameInTable="columnEquipment" msprop:Generator_UserColumnName="Equipment" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TargetSets" msprop:Generator_ColumnPropNameInRow="TargetSets" msprop:Generator_ColumnPropNameInTable="TargetSetsColumn" msprop:Generator_ColumnVarNameInTable="columnTargetSets" msprop:Generator_UserColumnName="TargetSets" type="xs:int" />
+              <xs:element name="TargetReps" msprop:Generator_ColumnPropNameInRow="TargetReps" msprop:Generator_ColumnPropNameInTable="TargetRepsColumn" msprop:Generator_ColumnVarNameInTable="columnTargetReps" msprop:Generator_UserColumnName="TargetReps" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -779,17 +883,30 @@ WHERE UserId = @UserId</CommandText>
       <xs:selector xpath=".//mstns:Workouts" />
       <xs:field xpath="mstns:Id" />
     </xs:unique>
+    <xs:unique name="ProgramView_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ProgramView" />
+      <xs:field xpath="mstns:Id" />
+    </xs:unique>
+    <xs:unique name="ProgramExercisesView_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ProgramExercisesView" />
+      <xs:field xpath="mstns:Id" />
+    </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK_Exercises_MuscleGroups" msdata:parent="MuscleGroups" msdata:child="Exercises" msdata:parentkey="Id" msdata:childkey="MuscleGroupId" msprop:Generator_UserParentTable="MuscleGroups" msprop:Generator_UserChildTable="Exercises" msprop:Generator_RelationVarName="relationFK_Exercises_MuscleGroups" msprop:Generator_ChildPropName="GetExercisesRows" msprop:Generator_ParentPropName="MuscleGroupsRow" msprop:Generator_UserRelationName="FK_Exercises_MuscleGroups" />
-      <msdata:Relationship name="FK_ProgramExercises_Exercises" msdata:parent="Exercises" msdata:child="ProgramExercises" msdata:parentkey="Id" msdata:childkey="ExerciseId" msprop:Generator_UserParentTable="Exercises" msprop:Generator_UserChildTable="ProgramExercises" msprop:Generator_RelationVarName="relationFK_ProgramExercises_Exercises" msprop:Generator_ChildPropName="GetProgramExercisesRows" msprop:Generator_UserRelationName="FK_ProgramExercises_Exercises" msprop:Generator_ParentPropName="ExercisesRow" />
-      <msdata:Relationship name="FK_ProgramExercises_Programs" msdata:parent="Programs" msdata:child="ProgramExercises" msdata:parentkey="Id" msdata:childkey="ProgramId" msprop:Generator_UserParentTable="Programs" msprop:Generator_UserChildTable="ProgramExercises" msprop:Generator_RelationVarName="relationFK_ProgramExercises_Programs" msprop:Generator_ChildPropName="GetProgramExercisesRows" msprop:Generator_ParentPropName="ProgramsRow" msprop:Generator_UserRelationName="FK_ProgramExercises_Programs" />
-      <msdata:Relationship name="FK_Programs_Users" msdata:parent="Users" msdata:child="Programs" msdata:parentkey="Id" msdata:childkey="AuthorId" msprop:Generator_UserParentTable="Users" msprop:Generator_UserChildTable="Programs" msprop:Generator_RelationVarName="relationFK_Programs_Users" msprop:Generator_ChildPropName="GetProgramsRows" msprop:Generator_ParentPropName="UsersRow" msprop:Generator_UserRelationName="FK_Programs_Users" />
-      <msdata:Relationship name="FK_Sets_Exercises" msdata:parent="Exercises" msdata:child="Sets" msdata:parentkey="Id" msdata:childkey="ExerciseId" msprop:Generator_UserParentTable="Exercises" msprop:Generator_UserChildTable="Sets" msprop:Generator_RelationVarName="relationFK_Sets_Exercises" msprop:Generator_ChildPropName="GetSetsRows" msprop:Generator_UserRelationName="FK_Sets_Exercises" msprop:Generator_ParentPropName="ExercisesRow" />
-      <msdata:Relationship name="FK_Sets_Workouts" msdata:parent="Workouts" msdata:child="Sets" msdata:parentkey="Id" msdata:childkey="WorkoutId" msprop:Generator_UserParentTable="Workouts" msprop:Generator_UserChildTable="Sets" msprop:Generator_RelationVarName="relationFK_Sets_Workouts" msprop:Generator_ChildPropName="GetSetsRows" msprop:Generator_ParentPropName="WorkoutsRow" msprop:Generator_UserRelationName="FK_Sets_Workouts" />
-      <msdata:Relationship name="FK_Workouts_Programs" msdata:parent="Programs" msdata:child="Workouts" msdata:parentkey="Id" msdata:childkey="ProgramId" msprop:Generator_UserParentTable="Programs" msprop:Generator_UserChildTable="Workouts" msprop:Generator_RelationVarName="relationFK_Workouts_Programs" msprop:Generator_ChildPropName="GetWorkoutsRows" msprop:Generator_UserRelationName="FK_Workouts_Programs" msprop:Generator_ParentPropName="ProgramsRow" />
-      <msdata:Relationship name="FK_Workouts_Users" msdata:parent="Users" msdata:child="Workouts" msdata:parentkey="Id" msdata:childkey="UserId" msprop:Generator_UserParentTable="Users" msprop:Generator_UserChildTable="Workouts" msprop:Generator_RelationVarName="relationFK_Workouts_Users" msprop:Generator_ChildPropName="GetWorkoutsRows" msprop:Generator_UserRelationName="FK_Workouts_Users" msprop:Generator_ParentPropName="UsersRow" />
+      <msdata:Relationship name="FK_Exercises_MuscleGroups" msdata:parent="MuscleGroups" msdata:child="Exercises" msdata:parentkey="Id" msdata:childkey="MuscleGroupId" msprop:Generator_UserParentTable="MuscleGroups" msprop:Generator_UserChildTable="Exercises" msprop:Generator_RelationVarName="relationFK_Exercises_MuscleGroups" msprop:Generator_ChildPropName="GetExercisesRows" msprop:Generator_UserRelationName="FK_Exercises_MuscleGroups" msprop:Generator_ParentPropName="MuscleGroupsRow" />
+      <msdata:Relationship name="FK_ProgramExercises_Exercises" msdata:parent="Exercises" msdata:child="ProgramExercises" msdata:parentkey="Id" msdata:childkey="ExerciseId" msprop:Generator_UserParentTable="Exercises" msprop:Generator_UserChildTable="ProgramExercises" msprop:Generator_RelationVarName="relationFK_ProgramExercises_Exercises" msprop:Generator_ChildPropName="GetProgramExercisesRows" msprop:Generator_ParentPropName="ExercisesRow" msprop:Generator_UserRelationName="FK_ProgramExercises_Exercises" />
+      <msdata:Relationship name="FK_ProgramExercises_Programs" msdata:parent="Programs" msdata:child="ProgramExercises" msdata:parentkey="Id" msdata:childkey="ProgramId" msprop:Generator_UserParentTable="Programs" msprop:Generator_UserChildTable="ProgramExercises" msprop:Generator_RelationVarName="relationFK_ProgramExercises_Programs" msprop:Generator_ChildPropName="GetProgramExercisesRows" msprop:Generator_UserRelationName="FK_ProgramExercises_Programs" msprop:Generator_ParentPropName="ProgramsRow" />
+      <msdata:Relationship name="FK_Programs_Users" msdata:parent="Users" msdata:child="Programs" msdata:parentkey="Id" msdata:childkey="AuthorId" msprop:Generator_UserParentTable="Users" msprop:Generator_UserChildTable="Programs" msprop:Generator_RelationVarName="relationFK_Programs_Users" msprop:Generator_ChildPropName="GetProgramsRows" msprop:Generator_UserRelationName="FK_Programs_Users" msprop:Generator_ParentPropName="UsersRow" />
+      <msdata:Relationship name="FK_Sets_Exercises" msdata:parent="Exercises" msdata:child="Sets" msdata:parentkey="Id" msdata:childkey="ExerciseId" msprop:Generator_UserParentTable="Exercises" msprop:Generator_UserChildTable="Sets" msprop:Generator_RelationVarName="relationFK_Sets_Exercises" msprop:Generator_ChildPropName="GetSetsRows" msprop:Generator_ParentPropName="ExercisesRow" msprop:Generator_UserRelationName="FK_Sets_Exercises" />
+      <msdata:Relationship name="FK_Sets_Workouts" msdata:parent="Workouts" msdata:child="Sets" msdata:parentkey="Id" msdata:childkey="WorkoutId" msprop:Generator_UserParentTable="Workouts" msprop:Generator_UserChildTable="Sets" msprop:Generator_RelationVarName="relationFK_Sets_Workouts" msprop:Generator_ChildPropName="GetSetsRows" msprop:Generator_UserRelationName="FK_Sets_Workouts" msprop:Generator_ParentPropName="WorkoutsRow" />
+      <msdata:Relationship name="FK_Workouts_Programs" msdata:parent="Programs" msdata:child="Workouts" msdata:parentkey="Id" msdata:childkey="ProgramId" msprop:Generator_UserParentTable="Programs" msprop:Generator_UserChildTable="Workouts" msprop:Generator_RelationVarName="relationFK_Workouts_Programs" msprop:Generator_ChildPropName="GetWorkoutsRows" msprop:Generator_ParentPropName="ProgramsRow" msprop:Generator_UserRelationName="FK_Workouts_Programs" />
+      <msdata:Relationship name="FK_Workouts_Users" msdata:parent="Users" msdata:child="Workouts" msdata:parentkey="Id" msdata:childkey="UserId" msprop:Generator_UserParentTable="Users" msprop:Generator_UserChildTable="Workouts" msprop:Generator_RelationVarName="relationFK_Workouts_Users" msprop:Generator_ChildPropName="GetWorkoutsRows" msprop:Generator_ParentPropName="UsersRow" msprop:Generator_UserRelationName="FK_Workouts_Users" />
+      <msdata:Relationship name="FK_ProgramExercises_Programs1" msdata:parent="ProgramView" msdata:child="ProgramExercises" msdata:parentkey="Id" msdata:childkey="ProgramId" msprop:Generator_UserParentTable="ProgramView" msprop:Generator_UserChildTable="ProgramExercises" msprop:Generator_RelationVarName="relationFK_ProgramExercises_Programs1" msprop:Generator_UserRelationName="FK_ProgramExercises_Programs1" msprop:Generator_ChildPropName="GetProgramExercisesRows" msprop:Generator_ParentPropName="ProgramViewRow" />
+      <msdata:Relationship name="FK_Workouts_Programs1" msdata:parent="ProgramView" msdata:child="Workouts" msdata:parentkey="Id" msdata:childkey="ProgramId" msprop:Generator_UserParentTable="ProgramView" msprop:Generator_UserChildTable="Workouts" msprop:Generator_RelationVarName="relationFK_Workouts_Programs1" msprop:Generator_UserRelationName="FK_Workouts_Programs1" msprop:Generator_ChildPropName="GetWorkoutsRows" msprop:Generator_ParentPropName="ProgramViewRow" />
+      <msdata:Relationship name="FK_ProgramExercises_Exercises1" msdata:parent="ProgramExercisesView" msdata:child="ProgramExercises" msdata:parentkey="Id" msdata:childkey="ExerciseId" msprop:Generator_UserParentTable="ProgramExercisesView" msprop:Generator_UserChildTable="ProgramExercises" msprop:Generator_RelationVarName="relationFK_ProgramExercises_Exercises1" msprop:Generator_UserRelationName="FK_ProgramExercises_Exercises1" msprop:Generator_ChildPropName="GetProgramExercisesRows" msprop:Generator_ParentPropName="ProgramExercisesViewRow" />
+      <msdata:Relationship name="FK_Sets_Exercises1" msdata:parent="ProgramExercisesView" msdata:child="Sets" msdata:parentkey="Id" msdata:childkey="ExerciseId" msprop:Generator_UserParentTable="ProgramExercisesView" msprop:Generator_UserChildTable="Sets" msprop:Generator_RelationVarName="relationFK_Sets_Exercises1" msprop:Generator_UserRelationName="FK_Sets_Exercises1" msprop:Generator_ChildPropName="GetSetsRows" msprop:Generator_ParentPropName="ProgramExercisesViewRow" />
+      <msdata:Relationship name="ProgramView_ProgramExercisesView" msdata:parent="ProgramView" msdata:child="ProgramExercisesView" msdata:parentkey="Id" msdata:childkey="Id" msprop:Generator_UserParentTable="ProgramView" msprop:Generator_UserChildTable="ProgramExercisesView" msprop:Generator_RelationVarName="relationProgramView_ProgramExercisesView" msprop:Generator_ChildPropName="GetProgramExercisesViewRows" msprop:Generator_ParentPropName="ProgramViewRow" msprop:Generator_UserRelationName="ProgramView_ProgramExercisesView" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

@@ -69,5 +69,115 @@ namespace WorkoutDiary.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tshirt1 {
+            get {
+                object obj = ResourceManager.GetObject("tshirt1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap uprazhnenie_razvedenie_gantelej_lezha_zaj6r05h {
+            get {
+                object obj = ResourceManager.GetObject("uprazhnenie-razvedenie-gantelej-lezha-zaj6r05h", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Снимок_экрана_2026_10_21_091302 {
+            get {
+                object obj = ResourceManager.GetObject("Снимок экрана 2026-10-21 091302", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Снимок_экрана_2026_10_21_094240 {
+            get {
+                object obj = ResourceManager.GetObject("Снимок экрана 2026-10-21 094240", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Снимок_экрана_2026_10_21_095133 {
+            get {
+                object obj = ResourceManager.GetObject("Снимок экрана 2026-10-21 095133", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Снимок_экрана_2026_10_21_095423 {
+            get {
+                object obj = ResourceManager.GetObject("Снимок экрана 2026-10-21 095423", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Снимок_экрана_2026_10_21_095715 {
+            get {
+                object obj = ResourceManager.GetObject("Снимок экрана 2026-10-21 095715", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Снимок_экрана_2026_10_21_095930 {
+            get {
+                object obj = ResourceManager.GetObject("Снимок экрана 2026-10-21 095930", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Снимок_экрана_2026_10_21_100244 {
+            get {
+                object obj = ResourceManager.GetObject("Снимок экрана 2026-10-21 100244", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Снимок_экрана_2026_10_21_100656 {
+            get {
+                object obj = ResourceManager.GetObject("Снимок экрана 2026-10-21 100656", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap фото2подтягивания {
+            get {
+                object obj = ResourceManager.GetObject("фото2подтягивания", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

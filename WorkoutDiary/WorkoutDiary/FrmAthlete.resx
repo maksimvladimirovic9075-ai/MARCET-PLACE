@@ -117,6 +117,48 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="colEx.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="colSets.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="colReps.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="colMax.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="programExercisesViewBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 54</value>
+  </metadata>
+  <metadata name="programViewBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>565, 17</value>
+  </metadata>
+  <metadata name="programViewBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>565, 17</value>
+  </metadata>
+  <metadata name="workoutDiaryDBDataSet1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="workoutDiaryDBDataSet1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="materialLabel53.Text" xml:space="preserve">
+    <value>1.  Исходное: Лягте на спину, ноги согнуты в коленях, стопы на полу. Руки за головой или скрещены на груди.
+2.  Подъем: На выдохе напрягите мышцы живота и приподнимите верхнюю часть туловища от пола, отрывая лопатки.
+3.  Верхняя точка: Задержитесь на секунду, сохраняя напряжение в животе.
+4.  Опускание: На вдохе плавно вернитесь в исходное положение.
+5.  Контроль: Не тяните себя руками за шею, движение должно идти от мышц живота.</value>
+  </data>
+  <data name="materialLabel56.Text" xml:space="preserve">
+    <value> 1. исходное: Лежа на скамье, ноги на полу, лопатки сведены, поясница прогнута. Хват шире плеч.
+2. снятие: Снять штангу над грудью.
+3. опускание: Медленно к нижней части груди, локти под 45-60 градусов. Касание груди.
+4. подъем: Мощно выжать вверх, руки выпрямить (не полностью).
+5 возврат: Плавно на стойки.
+</value>
+  </data>
   <data name="materialLabel47.Text" xml:space="preserve">
     <value>1.  Исходное: Встаньте прямо, ноги на ширине плеч. Штанга в руках, хват снизу (ладони вверх), руки на ширине плеч. Руки полностью выпрямлены.
 2.  Подъем: На выдохе согните руки в локтях, поднимая штангу к плечам. Держите локти прижатыми к корпусу.
@@ -215,35 +257,11 @@
 4.  Подъем штанги: Мощным движением выжмите штангу вверх, выпрямляя руки. Движение должно быть контролируемым. Не выпрямляйте локти полностью в верхней точке, сохраняйте легкое напряжение.
 5.  Возврат: Плавно опустите штангу обратно на стойки.</value>
   </data>
-  <data name="materialLabel53.Text" xml:space="preserve">
-    <value>1.  Исходное: Лягте на спину, ноги согнуты в коленях, стопы на полу. Руки за головой или скрещены на груди.
-2.  Подъем: На выдохе напрягите мышцы живота и приподнимите верхнюю часть туловища от пола, отрывая лопатки.
-3.  Верхняя точка: Задержитесь на секунду, сохраняя напряжение в животе.
-4.  Опускание: На вдохе плавно вернитесь в исходное положение.
-5.  Контроль: Не тяните себя руками за шею, движение должно идти от мышц живота.</value>
-  </data>
-  <data name="materialLabel56.Text" xml:space="preserve">
-    <value> 1. исходное: Лежа на скамье, ноги на полу, лопатки сведены, поясница прогнута. Хват шире плеч.
-2. снятие: Снять штангу над грудью.
-3. опускание: Медленно к нижней части груди, локти под 45-60 градусов. Касание груди.
-4. подъем: Мощно выжать вверх, руки выпрямить (не полностью).
-5 возврат: Плавно на стойки.
-</value>
-  </data>
-  <metadata name="workoutDiaryDBDataSet1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <metadata name="exercisesTableAdapter1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>203, 17</value>
   </metadata>
   <metadata name="workoutDiaryDBDataSet2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>379, 17</value>
-  </metadata>
-  <metadata name="programViewBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>565, 17</value>
-  </metadata>
-  <metadata name="workoutDiaryDBDataSet1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
   </metadata>
   <metadata name="programViewTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>767, 17</value>
@@ -251,22 +269,28 @@
   <metadata name="tableAdapterManager.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>961, 17</value>
   </metadata>
-  <metadata name="programViewBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>565, 17</value>
-  </metadata>
-  <metadata name="programExercisesViewBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 54</value>
-  </metadata>
-  <metadata name="programViewBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>565, 17</value>
-  </metadata>
   <metadata name="programExercisesViewTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>266, 54</value>
   </metadata>
+  <metadata name="colEx.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="colSets.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="colReps.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="colMax.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <metadata name="programExercisesViewBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 54</value>
   </metadata>
+  <metadata name="programViewBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>565, 17</value>
+  </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>99</value>
+    <value>246</value>
   </metadata>
 </root>

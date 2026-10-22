@@ -39,14 +39,38 @@
             this.btnWorkouts = new Material3.WinForms.Controls.MaterialButton();
             this.panelContent = new System.Windows.Forms.Panel();
             this.pageResults = new System.Windows.Forms.Panel();
-            this.materialCard1 = new Material3.WinForms.Controls.MaterialCard();
+            this.dvgExerciseProgress = new System.Windows.Forms.DataGridView();
+            this.materialLabel63 = new Material3.WinForms.Controls.MaterialLabel();
+            this.cardUniqueExercises = new Material3.WinForms.Controls.MaterialCard();
+            this.lblUniquercisesValue = new Material3.WinForms.Controls.MaterialLabel();
+            this.materialLabel62 = new Material3.WinForms.Controls.MaterialLabel();
+            this.cardTotalVolumeTitle = new Material3.WinForms.Controls.MaterialCard();
+            this.lblTotalVolumeValue = new Material3.WinForms.Controls.MaterialLabel();
+            this.materialLabel61 = new Material3.WinForms.Controls.MaterialLabel();
+            this.cardTotalSets = new Material3.WinForms.Controls.MaterialCard();
+            this.lblTotalSetsValue = new Material3.WinForms.Controls.MaterialLabel();
             this.materialLabel8 = new Material3.WinForms.Controls.MaterialLabel();
-            this.materialLabel7 = new Material3.WinForms.Controls.MaterialLabel();
-            this.materialLabel6 = new Material3.WinForms.Controls.MaterialLabel();
-            this.lblProfileLogin = new Material3.WinForms.Controls.MaterialLabel();
+            this.cardPersonalInfo = new Material3.WinForms.Controls.MaterialCard();
+            this.lblRoleTitle = new Material3.WinForms.Controls.MaterialLabel();
+            this.lblPasswordValue = new Material3.WinForms.Controls.MaterialLabel();
+            this.lblFullNameTitle = new Material3.WinForms.Controls.MaterialLabel();
+            this.lblLoginTitle = new Material3.WinForms.Controls.MaterialLabel();
             this.lblPersonalInfo = new Material3.WinForms.Controls.MaterialLabel();
+            this.programExercisesViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.programViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.workoutDiaryDBDataSet1 = new WorkoutDiary.WorkoutDiaryDBDataSet();
             this.pageExercises = new System.Windows.Forms.Panel();
             this.scrollExercises = new Material3.WinForms.Controls.MaterialScrollPanel();
+            this.materialCard15 = new Material3.WinForms.Controls.MaterialCard();
+            this.materialLabel53 = new Material3.WinForms.Controls.MaterialLabel();
+            this.materialLabel54 = new Material3.WinForms.Controls.MaterialLabel();
+            this.materialLabel55 = new Material3.WinForms.Controls.MaterialLabel();
+            this.materialCard16 = new Material3.WinForms.Controls.MaterialCard();
+            this.materialLabel56 = new Material3.WinForms.Controls.MaterialLabel();
+            this.materialLabel57 = new Material3.WinForms.Controls.MaterialLabel();
+            this.materialLabel58 = new Material3.WinForms.Controls.MaterialLabel();
+            this.pictureBox15 = new System.Windows.Forms.PictureBox();
+            this.pictureBox16 = new System.Windows.Forms.PictureBox();
             this.materialCard13 = new Material3.WinForms.Controls.MaterialCard();
             this.materialLabel47 = new Material3.WinForms.Controls.MaterialLabel();
             this.materialLabel48 = new Material3.WinForms.Controls.MaterialLabel();
@@ -119,37 +143,19 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.materialLabel10 = new Material3.WinForms.Controls.MaterialLabel();
             this.materialLabel9 = new Material3.WinForms.Controls.MaterialLabel();
-            this.materialCard15 = new Material3.WinForms.Controls.MaterialCard();
-            this.materialLabel53 = new Material3.WinForms.Controls.MaterialLabel();
-            this.materialLabel54 = new Material3.WinForms.Controls.MaterialLabel();
-            this.materialLabel55 = new Material3.WinForms.Controls.MaterialLabel();
-            this.materialCard16 = new Material3.WinForms.Controls.MaterialCard();
-            this.materialLabel56 = new Material3.WinForms.Controls.MaterialLabel();
-            this.materialLabel57 = new Material3.WinForms.Controls.MaterialLabel();
-            this.materialLabel58 = new Material3.WinForms.Controls.MaterialLabel();
-            this.pictureBox15 = new System.Windows.Forms.PictureBox();
-            this.pictureBox16 = new System.Windows.Forms.PictureBox();
-            this.pagePrograms = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.workoutDiaryDBDataSet1 = new WorkoutDiary.WorkoutDiaryDBDataSet();
             this.exercisesTableAdapter1 = new WorkoutDiary.WorkoutDiaryDBDataSetTableAdapters.ExercisesTableAdapter();
             this.workoutDiaryDBDataSet2 = new WorkoutDiary.WorkoutDiaryDBDataSet();
-            this.cardProgram = new Material3.WinForms.Controls.MaterialCard();
-            this.materialLabel59 = new Material3.WinForms.Controls.MaterialLabel();
-            this.cardExercises = new Material3.WinForms.Controls.MaterialCard();
-            this.programViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.programViewTableAdapter = new WorkoutDiary.WorkoutDiaryDBDataSetTableAdapters.ProgramViewTableAdapter();
             this.tableAdapterManager = new WorkoutDiary.WorkoutDiaryDBDataSetTableAdapters.TableAdapterManager();
-            this.programViewDataGridView = new System.Windows.Forms.DataGridView();
-            this.programExercisesViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.programExercisesViewTableAdapter = new WorkoutDiary.WorkoutDiaryDBDataSetTableAdapters.ProgramExercisesViewTableAdapter();
-            this.programExercisesViewDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEx = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSets = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colReps = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMax = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pagePrograms = new System.Windows.Forms.Panel();
             this.materialLabel60 = new Material3.WinForms.Controls.MaterialLabel();
+            this.cardExercises = new Material3.WinForms.Controls.MaterialCard();
+            this.programExercisesViewDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -158,9 +164,16 @@
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.materialLabel59 = new Material3.WinForms.Controls.MaterialLabel();
+            this.cardProgram = new Material3.WinForms.Controls.MaterialCard();
+            this.programViewDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
             this.pageWorkouts = new System.Windows.Forms.Panel();
             this.pageHome = new System.Windows.Forms.Panel();
-            this.materialLabel5 = new Material3.WinForms.Controls.MaterialLabel();
             this.MaterialCard = new Material3.WinForms.Controls.MaterialCard();
             this.lblLastWorkout = new Material3.WinForms.Controls.MaterialLabel();
             this.materialLabel2 = new Material3.WinForms.Controls.MaterialLabel();
@@ -173,14 +186,23 @@
             this.cardWelcome = new Material3.WinForms.Controls.MaterialCard();
             this.materialLabel3 = new Material3.WinForms.Controls.MaterialLabel();
             this.materialLabel4 = new Material3.WinForms.Controls.MaterialLabel();
-            this.dgvRecentWorkouts = new System.Windows.Forms.DataGridView();
-            this.cardRecentWorkouts = new Material3.WinForms.Controls.MaterialCard();
             this.plnBrand.SuspendLayout();
             this.panelContent.SuspendLayout();
             this.pageResults.SuspendLayout();
-            this.materialCard1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgExerciseProgress)).BeginInit();
+            this.cardUniqueExercises.SuspendLayout();
+            this.cardTotalVolumeTitle.SuspendLayout();
+            this.cardTotalSets.SuspendLayout();
+            this.cardPersonalInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.programExercisesViewBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.programViewBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.workoutDiaryDBDataSet1)).BeginInit();
             this.pageExercises.SuspendLayout();
             this.scrollExercises.SuspendLayout();
+            this.materialCard15.SuspendLayout();
+            this.materialCard16.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
             this.materialCard13.SuspendLayout();
             this.materialCard14.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
@@ -209,26 +231,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.cardExercise1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.materialCard15.SuspendLayout();
-            this.materialCard16.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
-            this.pagePrograms.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.workoutDiaryDBDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.workoutDiaryDBDataSet2)).BeginInit();
-            this.cardProgram.SuspendLayout();
+            this.pagePrograms.SuspendLayout();
             this.cardExercises.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.programViewBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.programViewDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.programExercisesViewBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.programExercisesViewDataGridView)).BeginInit();
+            this.cardProgram.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.programViewDataGridView)).BeginInit();
             this.pageWorkouts.SuspendLayout();
             this.pageHome.SuspendLayout();
             this.MaterialCard.SuspendLayout();
             this.cardExerciseCount.SuspendLayout();
             this.cardWorkoutCount.SuspendLayout();
             this.cardWelcome.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRecentWorkouts)).BeginInit();
             this.SuspendLayout();
             // 
             // lblBrand
@@ -355,14 +369,14 @@
             this.btnWorkouts.Text = "Мои тренировки";
             this.btnWorkouts.UseVisualStyleBackColor = false;
             this.btnWorkouts.Variant = Material3.WinForms.Controls.MaterialButtonVariant.Outlined;
-            this.btnWorkouts.Click += new System.EventHandler(this.btnWorkouts_Click);
+            this.btnWorkouts.Click += new System.EventHandler(this.btnWorkouts_Click_1);
             // 
             // panelContent
             // 
             this.panelContent.Controls.Add(this.pageWorkouts);
             this.panelContent.Controls.Add(this.pagePrograms);
-            this.panelContent.Controls.Add(this.pageExercises);
             this.panelContent.Controls.Add(this.pageResults);
+            this.panelContent.Controls.Add(this.pageExercises);
             this.panelContent.Location = new System.Drawing.Point(257, 1);
             this.panelContent.Name = "panelContent";
             this.panelContent.Size = new System.Drawing.Size(942, 728);
@@ -370,76 +384,233 @@
             // 
             // pageResults
             // 
-            this.pageResults.Controls.Add(this.materialCard1);
-            this.pageResults.Location = new System.Drawing.Point(-4, -4);
+            this.pageResults.Controls.Add(this.dvgExerciseProgress);
+            this.pageResults.Controls.Add(this.materialLabel63);
+            this.pageResults.Controls.Add(this.cardUniqueExercises);
+            this.pageResults.Controls.Add(this.cardTotalVolumeTitle);
+            this.pageResults.Controls.Add(this.cardTotalSets);
+            this.pageResults.Controls.Add(this.cardPersonalInfo);
+            this.pageResults.Location = new System.Drawing.Point(1, 2);
             this.pageResults.Name = "pageResults";
-            this.pageResults.Size = new System.Drawing.Size(938, 724);
-            this.pageResults.TabIndex = 28;
+            this.pageResults.Size = new System.Drawing.Size(941, 724);
+            this.pageResults.TabIndex = 39;
             // 
-            // materialCard1
+            // dvgExerciseProgress
             // 
-            this.materialCard1.BackColor = System.Drawing.Color.White;
-            this.materialCard1.Controls.Add(this.materialLabel8);
-            this.materialCard1.Controls.Add(this.materialLabel7);
-            this.materialCard1.Controls.Add(this.materialLabel6);
-            this.materialCard1.Controls.Add(this.lblProfileLogin);
-            this.materialCard1.Controls.Add(this.lblPersonalInfo);
-            this.materialCard1.CornerRadius = 18;
-            this.materialCard1.Location = new System.Drawing.Point(28, 28);
-            this.materialCard1.Name = "materialCard1";
-            this.materialCard1.Padding = new System.Windows.Forms.Padding(16);
-            this.materialCard1.Size = new System.Drawing.Size(313, 197);
-            this.materialCard1.TabIndex = 25;
+            this.dvgExerciseProgress.AllowUserToAddRows = false;
+            this.dvgExerciseProgress.AllowUserToDeleteRows = false;
+            this.dvgExerciseProgress.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dvgExerciseProgress.BackgroundColor = System.Drawing.Color.White;
+            this.dvgExerciseProgress.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dvgExerciseProgress.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colEx,
+            this.colSets,
+            this.colReps,
+            this.colMax});
+            this.dvgExerciseProgress.Location = new System.Drawing.Point(24, 320);
+            this.dvgExerciseProgress.MultiSelect = false;
+            this.dvgExerciseProgress.Name = "dvgExerciseProgress";
+            this.dvgExerciseProgress.ReadOnly = true;
+            this.dvgExerciseProgress.RowHeadersVisible = false;
+            this.dvgExerciseProgress.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dvgExerciseProgress.Size = new System.Drawing.Size(900, 330);
+            this.dvgExerciseProgress.TabIndex = 30;
+            // 
+            // materialLabel63
+            // 
+            this.materialLabel63.BackColor = System.Drawing.Color.Transparent;
+            this.materialLabel63.Font = new System.Drawing.Font("Segoe UI Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.materialLabel63.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(35)))), ((int)(((byte)(42)))));
+            this.materialLabel63.Location = new System.Drawing.Point(24, 275);
+            this.materialLabel63.Name = "materialLabel63";
+            this.materialLabel63.Size = new System.Drawing.Size(500, 35);
+            this.materialLabel63.TabIndex = 29;
+            this.materialLabel63.Text = "Мой прогресс по упражнениям";
+            // 
+            // cardUniqueExercises
+            // 
+            this.cardUniqueExercises.BackColor = System.Drawing.Color.White;
+            this.cardUniqueExercises.Controls.Add(this.lblUniquercisesValue);
+            this.cardUniqueExercises.Controls.Add(this.materialLabel62);
+            this.cardUniqueExercises.CornerRadius = 12;
+            this.cardUniqueExercises.Location = new System.Drawing.Point(754, 20);
+            this.cardUniqueExercises.Name = "cardUniqueExercises";
+            this.cardUniqueExercises.Padding = new System.Windows.Forms.Padding(16);
+            this.cardUniqueExercises.Size = new System.Drawing.Size(170, 110);
+            this.cardUniqueExercises.TabIndex = 28;
+            // 
+            // lblUniquercisesValue
+            // 
+            this.lblUniquercisesValue.BackColor = System.Drawing.Color.Transparent;
+            this.lblUniquercisesValue.Font = new System.Drawing.Font("Segoe UI Black", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblUniquercisesValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(80)))), ((int)(((byte)(164)))));
+            this.lblUniquercisesValue.Location = new System.Drawing.Point(8, 48);
+            this.lblUniquercisesValue.Name = "lblUniquercisesValue";
+            this.lblUniquercisesValue.Size = new System.Drawing.Size(170, 40);
+            this.lblUniquercisesValue.TabIndex = 2;
+            this.lblUniquercisesValue.Text = "0";
+            // 
+            // materialLabel62
+            // 
+            this.materialLabel62.BackColor = System.Drawing.Color.Transparent;
+            this.materialLabel62.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.materialLabel62.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(88)))), ((int)(((byte)(96)))));
+            this.materialLabel62.Location = new System.Drawing.Point(10, 16);
+            this.materialLabel62.Name = "materialLabel62";
+            this.materialLabel62.Size = new System.Drawing.Size(150, 25);
+            this.materialLabel62.TabIndex = 2;
+            this.materialLabel62.Text = "Разных упражнений";
+            this.materialLabel62.UseWaitCursor = true;
+            // 
+            // cardTotalVolumeTitle
+            // 
+            this.cardTotalVolumeTitle.BackColor = System.Drawing.Color.White;
+            this.cardTotalVolumeTitle.Controls.Add(this.lblTotalVolumeValue);
+            this.cardTotalVolumeTitle.Controls.Add(this.materialLabel61);
+            this.cardTotalVolumeTitle.CornerRadius = 12;
+            this.cardTotalVolumeTitle.ForeColor = System.Drawing.Color.White;
+            this.cardTotalVolumeTitle.Location = new System.Drawing.Point(558, 20);
+            this.cardTotalVolumeTitle.Name = "cardTotalVolumeTitle";
+            this.cardTotalVolumeTitle.Padding = new System.Windows.Forms.Padding(16);
+            this.cardTotalVolumeTitle.Size = new System.Drawing.Size(190, 110);
+            this.cardTotalVolumeTitle.TabIndex = 27;
+            // 
+            // lblTotalVolumeValue
+            // 
+            this.lblTotalVolumeValue.BackColor = System.Drawing.Color.Transparent;
+            this.lblTotalVolumeValue.Font = new System.Drawing.Font("Segoe UI Black", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblTotalVolumeValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(80)))), ((int)(((byte)(164)))));
+            this.lblTotalVolumeValue.Location = new System.Drawing.Point(10, 48);
+            this.lblTotalVolumeValue.Name = "lblTotalVolumeValue";
+            this.lblTotalVolumeValue.Size = new System.Drawing.Size(170, 40);
+            this.lblTotalVolumeValue.TabIndex = 1;
+            this.lblTotalVolumeValue.Text = "0";
+            // 
+            // materialLabel61
+            // 
+            this.materialLabel61.BackColor = System.Drawing.Color.Transparent;
+            this.materialLabel61.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.materialLabel61.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(88)))), ((int)(((byte)(96)))));
+            this.materialLabel61.Location = new System.Drawing.Point(10, 15);
+            this.materialLabel61.Name = "materialLabel61";
+            this.materialLabel61.Size = new System.Drawing.Size(170, 25);
+            this.materialLabel61.TabIndex = 0;
+            this.materialLabel61.Text = "Общий объём, кг";
+            // 
+            // cardTotalSets
+            // 
+            this.cardTotalSets.BackColor = System.Drawing.Color.White;
+            this.cardTotalSets.Controls.Add(this.lblTotalSetsValue);
+            this.cardTotalSets.Controls.Add(this.materialLabel8);
+            this.cardTotalSets.CornerRadius = 12;
+            this.cardTotalSets.Location = new System.Drawing.Point(382, 20);
+            this.cardTotalSets.Name = "cardTotalSets";
+            this.cardTotalSets.Padding = new System.Windows.Forms.Padding(16);
+            this.cardTotalSets.Size = new System.Drawing.Size(170, 110);
+            this.cardTotalSets.TabIndex = 26;
+            // 
+            // lblTotalSetsValue
+            // 
+            this.lblTotalSetsValue.BackColor = System.Drawing.Color.Transparent;
+            this.lblTotalSetsValue.Font = new System.Drawing.Font("Segoe UI Black", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblTotalSetsValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(80)))), ((int)(((byte)(164)))));
+            this.lblTotalSetsValue.Location = new System.Drawing.Point(10, 48);
+            this.lblTotalSetsValue.Name = "lblTotalSetsValue";
+            this.lblTotalSetsValue.Size = new System.Drawing.Size(150, 40);
+            this.lblTotalSetsValue.TabIndex = 7;
+            this.lblTotalSetsValue.Text = "0";
             // 
             // materialLabel8
             // 
             this.materialLabel8.BackColor = System.Drawing.Color.Transparent;
-            this.materialLabel8.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.materialLabel8.Location = new System.Drawing.Point(20, 125);
+            this.materialLabel8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.materialLabel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(88)))), ((int)(((byte)(96)))));
+            this.materialLabel8.Location = new System.Drawing.Point(10, 15);
             this.materialLabel8.Name = "materialLabel8";
-            this.materialLabel8.Size = new System.Drawing.Size(100, 23);
-            this.materialLabel8.TabIndex = 4;
-            this.materialLabel8.Text = "Роль:";
+            this.materialLabel8.Size = new System.Drawing.Size(150, 25);
+            this.materialLabel8.TabIndex = 6;
+            this.materialLabel8.Text = "Всего подходов";
             // 
-            // materialLabel7
+            // cardPersonalInfo
             // 
-            this.materialLabel7.BackColor = System.Drawing.Color.Transparent;
-            this.materialLabel7.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.materialLabel7.Location = new System.Drawing.Point(20, 100);
-            this.materialLabel7.Name = "materialLabel7";
-            this.materialLabel7.Size = new System.Drawing.Size(100, 23);
-            this.materialLabel7.TabIndex = 3;
-            this.materialLabel7.Text = "Пароль: ";
+            this.cardPersonalInfo.BackColor = System.Drawing.Color.White;
+            this.cardPersonalInfo.Controls.Add(this.lblRoleTitle);
+            this.cardPersonalInfo.Controls.Add(this.lblPasswordValue);
+            this.cardPersonalInfo.Controls.Add(this.lblFullNameTitle);
+            this.cardPersonalInfo.Controls.Add(this.lblLoginTitle);
+            this.cardPersonalInfo.Controls.Add(this.lblPersonalInfo);
+            this.cardPersonalInfo.CornerRadius = 18;
+            this.cardPersonalInfo.Location = new System.Drawing.Point(17, 20);
+            this.cardPersonalInfo.Name = "cardPersonalInfo";
+            this.cardPersonalInfo.Padding = new System.Windows.Forms.Padding(16);
+            this.cardPersonalInfo.Size = new System.Drawing.Size(350, 230);
+            this.cardPersonalInfo.TabIndex = 25;
             // 
-            // materialLabel6
+            // lblRoleTitle
             // 
-            this.materialLabel6.BackColor = System.Drawing.Color.Transparent;
-            this.materialLabel6.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.materialLabel6.Location = new System.Drawing.Point(20, 75);
-            this.materialLabel6.Name = "materialLabel6";
-            this.materialLabel6.Size = new System.Drawing.Size(100, 23);
-            this.materialLabel6.TabIndex = 2;
-            this.materialLabel6.Text = "ФИО:";
+            this.lblRoleTitle.BackColor = System.Drawing.Color.Transparent;
+            this.lblRoleTitle.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRoleTitle.Location = new System.Drawing.Point(22, 171);
+            this.lblRoleTitle.Name = "lblRoleTitle";
+            this.lblRoleTitle.Size = new System.Drawing.Size(283, 38);
+            this.lblRoleTitle.TabIndex = 4;
+            this.lblRoleTitle.Text = "Роль:";
             // 
-            // lblProfileLogin
+            // lblPasswordValue
             // 
-            this.lblProfileLogin.BackColor = System.Drawing.Color.Transparent;
-            this.lblProfileLogin.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProfileLogin.Location = new System.Drawing.Point(20, 150);
-            this.lblProfileLogin.Name = "lblProfileLogin";
-            this.lblProfileLogin.Size = new System.Drawing.Size(100, 23);
-            this.lblProfileLogin.TabIndex = 1;
-            this.lblProfileLogin.Text = "Login:";
+            this.lblPasswordValue.BackColor = System.Drawing.Color.Transparent;
+            this.lblPasswordValue.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPasswordValue.Location = new System.Drawing.Point(19, 133);
+            this.lblPasswordValue.Name = "lblPasswordValue";
+            this.lblPasswordValue.Size = new System.Drawing.Size(283, 36);
+            this.lblPasswordValue.TabIndex = 3;
+            this.lblPasswordValue.Text = "Пароль: ";
+            // 
+            // lblFullNameTitle
+            // 
+            this.lblFullNameTitle.BackColor = System.Drawing.Color.Transparent;
+            this.lblFullNameTitle.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFullNameTitle.Location = new System.Drawing.Point(20, 65);
+            this.lblFullNameTitle.Name = "lblFullNameTitle";
+            this.lblFullNameTitle.Size = new System.Drawing.Size(300, 34);
+            this.lblFullNameTitle.TabIndex = 2;
+            this.lblFullNameTitle.Text = "ФИО:";
+            // 
+            // lblLoginTitle
+            // 
+            this.lblLoginTitle.BackColor = System.Drawing.Color.Transparent;
+            this.lblLoginTitle.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoginTitle.Location = new System.Drawing.Point(22, 99);
+            this.lblLoginTitle.Name = "lblLoginTitle";
+            this.lblLoginTitle.Size = new System.Drawing.Size(270, 29);
+            this.lblLoginTitle.TabIndex = 1;
+            this.lblLoginTitle.Text = "Login:";
             // 
             // lblPersonalInfo
             // 
             this.lblPersonalInfo.BackColor = System.Drawing.Color.Transparent;
             this.lblPersonalInfo.Font = new System.Drawing.Font("Segoe UI Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblPersonalInfo.Location = new System.Drawing.Point(56, 16);
+            this.lblPersonalInfo.Location = new System.Drawing.Point(20, 15);
             this.lblPersonalInfo.Name = "lblPersonalInfo";
-            this.lblPersonalInfo.Size = new System.Drawing.Size(197, 36);
+            this.lblPersonalInfo.Size = new System.Drawing.Size(300, 35);
             this.lblPersonalInfo.TabIndex = 0;
             this.lblPersonalInfo.Text = "Личные данные";
+            // 
+            // programExercisesViewBindingSource
+            // 
+            this.programExercisesViewBindingSource.DataMember = "ProgramView_ProgramExercisesView";
+            this.programExercisesViewBindingSource.DataSource = this.programViewBindingSource;
+            // 
+            // programViewBindingSource
+            // 
+            this.programViewBindingSource.DataMember = "ProgramView";
+            this.programViewBindingSource.DataSource = this.workoutDiaryDBDataSet1;
+            // 
+            // workoutDiaryDBDataSet1
+            // 
+            this.workoutDiaryDBDataSet1.DataSetName = "WorkoutDiaryDBDataSet";
+            this.workoutDiaryDBDataSet1.EnforceConstraints = false;
+            this.workoutDiaryDBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // pageExercises
             // 
@@ -469,6 +640,117 @@
             this.scrollExercises.Name = "scrollExercises";
             this.scrollExercises.Size = new System.Drawing.Size(905, 575);
             this.scrollExercises.TabIndex = 3;
+            // 
+            // materialCard15
+            // 
+            this.materialCard15.BackColor = System.Drawing.Color.White;
+            this.materialCard15.Controls.Add(this.materialLabel53);
+            this.materialCard15.Controls.Add(this.materialLabel54);
+            this.materialCard15.Controls.Add(this.materialLabel55);
+            this.materialCard15.Controls.Add(this.materialCard16);
+            this.materialCard15.Controls.Add(this.pictureBox16);
+            this.materialCard15.CornerRadius = 12;
+            this.materialCard15.Location = new System.Drawing.Point(12, 2035);
+            this.materialCard15.Name = "materialCard15";
+            this.materialCard15.Padding = new System.Windows.Forms.Padding(16);
+            this.materialCard15.Size = new System.Drawing.Size(280, 562);
+            this.materialCard15.TabIndex = 13;
+            // 
+            // materialLabel53
+            // 
+            this.materialLabel53.BackColor = System.Drawing.Color.Transparent;
+            this.materialLabel53.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.materialLabel53.Location = new System.Drawing.Point(13, 231);
+            this.materialLabel53.Name = "materialLabel53";
+            this.materialLabel53.Size = new System.Drawing.Size(254, 352);
+            this.materialLabel53.TabIndex = 3;
+            this.materialLabel53.Text = resources.GetString("materialLabel53.Text");
+            // 
+            // materialLabel54
+            // 
+            this.materialLabel54.BackColor = System.Drawing.Color.Transparent;
+            this.materialLabel54.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.materialLabel54.Location = new System.Drawing.Point(10, 193);
+            this.materialLabel54.Name = "materialLabel54";
+            this.materialLabel54.Size = new System.Drawing.Size(162, 23);
+            this.materialLabel54.TabIndex = 2;
+            this.materialLabel54.Text = "Техника выполнения: \r\n";
+            // 
+            // materialLabel55
+            // 
+            this.materialLabel55.BackColor = System.Drawing.Color.Transparent;
+            this.materialLabel55.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.materialLabel55.Location = new System.Drawing.Point(9, 170);
+            this.materialLabel55.Name = "materialLabel55";
+            this.materialLabel55.Size = new System.Drawing.Size(197, 23);
+            this.materialLabel55.TabIndex = 1;
+            this.materialLabel55.Text = "Скручивания";
+            // 
+            // materialCard16
+            // 
+            this.materialCard16.BackColor = System.Drawing.Color.White;
+            this.materialCard16.Controls.Add(this.materialLabel56);
+            this.materialCard16.Controls.Add(this.materialLabel57);
+            this.materialCard16.Controls.Add(this.materialLabel58);
+            this.materialCard16.Controls.Add(this.pictureBox15);
+            this.materialCard16.CornerRadius = 12;
+            this.materialCard16.Location = new System.Drawing.Point(276, 0);
+            this.materialCard16.Name = "materialCard16";
+            this.materialCard16.Padding = new System.Windows.Forms.Padding(16);
+            this.materialCard16.Size = new System.Drawing.Size(280, 460);
+            this.materialCard16.TabIndex = 4;
+            // 
+            // materialLabel56
+            // 
+            this.materialLabel56.BackColor = System.Drawing.Color.Transparent;
+            this.materialLabel56.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.materialLabel56.Location = new System.Drawing.Point(13, 231);
+            this.materialLabel56.Name = "materialLabel56";
+            this.materialLabel56.Size = new System.Drawing.Size(254, 213);
+            this.materialLabel56.TabIndex = 3;
+            this.materialLabel56.Text = resources.GetString("materialLabel56.Text");
+            // 
+            // materialLabel57
+            // 
+            this.materialLabel57.BackColor = System.Drawing.Color.Transparent;
+            this.materialLabel57.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.materialLabel57.Location = new System.Drawing.Point(10, 193);
+            this.materialLabel57.Name = "materialLabel57";
+            this.materialLabel57.Size = new System.Drawing.Size(162, 23);
+            this.materialLabel57.TabIndex = 2;
+            this.materialLabel57.Text = "Техника выполнения: \r\n";
+            // 
+            // materialLabel58
+            // 
+            this.materialLabel58.BackColor = System.Drawing.Color.Transparent;
+            this.materialLabel58.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.materialLabel58.Location = new System.Drawing.Point(9, 170);
+            this.materialLabel58.Name = "materialLabel58";
+            this.materialLabel58.Size = new System.Drawing.Size(169, 23);
+            this.materialLabel58.TabIndex = 1;
+            this.materialLabel58.Text = "Жим штанги лёжа";
+            // 
+            // pictureBox15
+            // 
+            this.pictureBox15.BackColor = System.Drawing.Color.Black;
+            this.pictureBox15.Image = global::WorkoutDiary.Properties.Resources.Снимок_экрана_2026_10_21_091302;
+            this.pictureBox15.Location = new System.Drawing.Point(10, 10);
+            this.pictureBox15.Name = "pictureBox15";
+            this.pictureBox15.Size = new System.Drawing.Size(260, 150);
+            this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox15.TabIndex = 0;
+            this.pictureBox15.TabStop = false;
+            // 
+            // pictureBox16
+            // 
+            this.pictureBox16.BackColor = System.Drawing.Color.Black;
+            this.pictureBox16.Image = global::WorkoutDiary.Properties.Resources.Снимок_экрана_2026_10_21_100656;
+            this.pictureBox16.Location = new System.Drawing.Point(10, 10);
+            this.pictureBox16.Name = "pictureBox16";
+            this.pictureBox16.Size = new System.Drawing.Size(260, 150);
+            this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox16.TabIndex = 0;
+            this.pictureBox16.TabStop = false;
             // 
             // materialCard13
             // 
@@ -1266,143 +1548,6 @@
             this.materialLabel9.TabIndex = 0;
             this.materialLabel9.Text = "Упражнения";
             // 
-            // materialCard15
-            // 
-            this.materialCard15.BackColor = System.Drawing.Color.White;
-            this.materialCard15.Controls.Add(this.materialLabel53);
-            this.materialCard15.Controls.Add(this.materialLabel54);
-            this.materialCard15.Controls.Add(this.materialLabel55);
-            this.materialCard15.Controls.Add(this.materialCard16);
-            this.materialCard15.Controls.Add(this.pictureBox16);
-            this.materialCard15.CornerRadius = 12;
-            this.materialCard15.Location = new System.Drawing.Point(12, 2035);
-            this.materialCard15.Name = "materialCard15";
-            this.materialCard15.Padding = new System.Windows.Forms.Padding(16);
-            this.materialCard15.Size = new System.Drawing.Size(280, 562);
-            this.materialCard15.TabIndex = 13;
-            // 
-            // materialLabel53
-            // 
-            this.materialLabel53.BackColor = System.Drawing.Color.Transparent;
-            this.materialLabel53.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.materialLabel53.Location = new System.Drawing.Point(13, 231);
-            this.materialLabel53.Name = "materialLabel53";
-            this.materialLabel53.Size = new System.Drawing.Size(254, 352);
-            this.materialLabel53.TabIndex = 3;
-            this.materialLabel53.Text = resources.GetString("materialLabel53.Text");
-            // 
-            // materialLabel54
-            // 
-            this.materialLabel54.BackColor = System.Drawing.Color.Transparent;
-            this.materialLabel54.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.materialLabel54.Location = new System.Drawing.Point(10, 193);
-            this.materialLabel54.Name = "materialLabel54";
-            this.materialLabel54.Size = new System.Drawing.Size(162, 23);
-            this.materialLabel54.TabIndex = 2;
-            this.materialLabel54.Text = "Техника выполнения: \r\n";
-            // 
-            // materialLabel55
-            // 
-            this.materialLabel55.BackColor = System.Drawing.Color.Transparent;
-            this.materialLabel55.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.materialLabel55.Location = new System.Drawing.Point(9, 170);
-            this.materialLabel55.Name = "materialLabel55";
-            this.materialLabel55.Size = new System.Drawing.Size(197, 23);
-            this.materialLabel55.TabIndex = 1;
-            this.materialLabel55.Text = "Скручивания";
-            // 
-            // materialCard16
-            // 
-            this.materialCard16.BackColor = System.Drawing.Color.White;
-            this.materialCard16.Controls.Add(this.materialLabel56);
-            this.materialCard16.Controls.Add(this.materialLabel57);
-            this.materialCard16.Controls.Add(this.materialLabel58);
-            this.materialCard16.Controls.Add(this.pictureBox15);
-            this.materialCard16.CornerRadius = 12;
-            this.materialCard16.Location = new System.Drawing.Point(276, 0);
-            this.materialCard16.Name = "materialCard16";
-            this.materialCard16.Padding = new System.Windows.Forms.Padding(16);
-            this.materialCard16.Size = new System.Drawing.Size(280, 460);
-            this.materialCard16.TabIndex = 4;
-            // 
-            // materialLabel56
-            // 
-            this.materialLabel56.BackColor = System.Drawing.Color.Transparent;
-            this.materialLabel56.Font = new System.Drawing.Font("Segoe UI Symbol", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.materialLabel56.Location = new System.Drawing.Point(13, 231);
-            this.materialLabel56.Name = "materialLabel56";
-            this.materialLabel56.Size = new System.Drawing.Size(254, 213);
-            this.materialLabel56.TabIndex = 3;
-            this.materialLabel56.Text = resources.GetString("materialLabel56.Text");
-            // 
-            // materialLabel57
-            // 
-            this.materialLabel57.BackColor = System.Drawing.Color.Transparent;
-            this.materialLabel57.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.materialLabel57.Location = new System.Drawing.Point(10, 193);
-            this.materialLabel57.Name = "materialLabel57";
-            this.materialLabel57.Size = new System.Drawing.Size(162, 23);
-            this.materialLabel57.TabIndex = 2;
-            this.materialLabel57.Text = "Техника выполнения: \r\n";
-            // 
-            // materialLabel58
-            // 
-            this.materialLabel58.BackColor = System.Drawing.Color.Transparent;
-            this.materialLabel58.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.materialLabel58.Location = new System.Drawing.Point(9, 170);
-            this.materialLabel58.Name = "materialLabel58";
-            this.materialLabel58.Size = new System.Drawing.Size(169, 23);
-            this.materialLabel58.TabIndex = 1;
-            this.materialLabel58.Text = "Жим штанги лёжа";
-            // 
-            // pictureBox15
-            // 
-            this.pictureBox15.BackColor = System.Drawing.Color.Black;
-            this.pictureBox15.Image = global::WorkoutDiary.Properties.Resources.Снимок_экрана_2026_10_21_091302;
-            this.pictureBox15.Location = new System.Drawing.Point(10, 10);
-            this.pictureBox15.Name = "pictureBox15";
-            this.pictureBox15.Size = new System.Drawing.Size(260, 150);
-            this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox15.TabIndex = 0;
-            this.pictureBox15.TabStop = false;
-            // 
-            // pictureBox16
-            // 
-            this.pictureBox16.BackColor = System.Drawing.Color.Black;
-            this.pictureBox16.Image = global::WorkoutDiary.Properties.Resources.Снимок_экрана_2026_10_21_100656;
-            this.pictureBox16.Location = new System.Drawing.Point(10, 10);
-            this.pictureBox16.Name = "pictureBox16";
-            this.pictureBox16.Size = new System.Drawing.Size(260, 150);
-            this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox16.TabIndex = 0;
-            this.pictureBox16.TabStop = false;
-            // 
-            // pagePrograms
-            // 
-            this.pagePrograms.Controls.Add(this.materialLabel60);
-            this.pagePrograms.Controls.Add(this.cardExercises);
-            this.pagePrograms.Controls.Add(this.cardProgram);
-            this.pagePrograms.Controls.Add(this.label2);
-            this.pagePrograms.Location = new System.Drawing.Point(5, 4);
-            this.pagePrograms.Name = "pagePrograms";
-            this.pagePrograms.Size = new System.Drawing.Size(937, 724);
-            this.pagePrograms.TabIndex = 34;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(12, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(275, 30);
-            this.label2.TabIndex = 21;
-            this.label2.Text = "Программы тренировок";
-            // 
-            // workoutDiaryDBDataSet1
-            // 
-            this.workoutDiaryDBDataSet1.DataSetName = "WorkoutDiaryDBDataSet";
-            this.workoutDiaryDBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // exercisesTableAdapter1
             // 
             this.exercisesTableAdapter1.ClearBeforeFill = true;
@@ -1410,46 +1555,8 @@
             // workoutDiaryDBDataSet2
             // 
             this.workoutDiaryDBDataSet2.DataSetName = "WorkoutDiaryDBDataSet";
+            this.workoutDiaryDBDataSet2.EnforceConstraints = false;
             this.workoutDiaryDBDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // cardProgram
-            // 
-            this.cardProgram.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cardProgram.BackColor = System.Drawing.Color.White;
-            this.cardProgram.Controls.Add(this.programViewDataGridView);
-            this.cardProgram.CornerRadius = 12;
-            this.cardProgram.Location = new System.Drawing.Point(20, 55);
-            this.cardProgram.Name = "cardProgram";
-            this.cardProgram.Padding = new System.Windows.Forms.Padding(16);
-            this.cardProgram.Size = new System.Drawing.Size(831, 314);
-            this.cardProgram.TabIndex = 22;
-            // 
-            // materialLabel59
-            // 
-            this.materialLabel59.BackColor = System.Drawing.Color.Transparent;
-            this.materialLabel59.Location = new System.Drawing.Point(25, 16);
-            this.materialLabel59.Name = "materialLabel59";
-            this.materialLabel59.Size = new System.Drawing.Size(157, 23);
-            this.materialLabel59.TabIndex = 0;
-            this.materialLabel59.Text = "Упражнение программы";
-            // 
-            // cardExercises
-            // 
-            this.cardExercises.BackColor = System.Drawing.Color.White;
-            this.cardExercises.Controls.Add(this.programExercisesViewDataGridView);
-            this.cardExercises.Controls.Add(this.materialLabel59);
-            this.cardExercises.CornerRadius = 12;
-            this.cardExercises.Location = new System.Drawing.Point(20, 430);
-            this.cardExercises.Name = "cardExercises";
-            this.cardExercises.Padding = new System.Windows.Forms.Padding(16);
-            this.cardExercises.Size = new System.Drawing.Size(831, 273);
-            this.cardExercises.TabIndex = 23;
-            // 
-            // programViewBindingSource
-            // 
-            this.programViewBindingSource.DataMember = "ProgramView";
-            this.programViewBindingSource.DataSource = this.workoutDiaryDBDataSet1;
             // 
             // programViewTableAdapter
             // 
@@ -1467,38 +1574,69 @@
             this.tableAdapterManager.UsersTableAdapter = null;
             this.tableAdapterManager.WorkoutsTableAdapter = null;
             // 
-            // programViewDataGridView
-            // 
-            this.programViewDataGridView.AllowUserToAddRows = false;
-            this.programViewDataGridView.AllowUserToDeleteRows = false;
-            this.programViewDataGridView.AutoGenerateColumns = false;
-            this.programViewDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.programViewDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.programViewDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5});
-            this.programViewDataGridView.DataSource = this.programViewBindingSource;
-            this.programViewDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.programViewDataGridView.GridColor = System.Drawing.SystemColors.ActiveCaption;
-            this.programViewDataGridView.Location = new System.Drawing.Point(16, 16);
-            this.programViewDataGridView.Name = "programViewDataGridView";
-            this.programViewDataGridView.ReadOnly = true;
-            this.programViewDataGridView.RowHeadersVisible = false;
-            this.programViewDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.programViewDataGridView.Size = new System.Drawing.Size(799, 282);
-            this.programViewDataGridView.TabIndex = 1;
-            // 
-            // programExercisesViewBindingSource
-            // 
-            this.programExercisesViewBindingSource.DataMember = "ProgramView_ProgramExercisesView";
-            this.programExercisesViewBindingSource.DataSource = this.programViewBindingSource;
-            // 
             // programExercisesViewTableAdapter
             // 
             this.programExercisesViewTableAdapter.ClearBeforeFill = true;
+            // 
+            // colEx
+            // 
+            this.colEx.DataPropertyName = "ExerciseName";
+            this.colEx.HeaderText = "Упражнение";
+            this.colEx.Name = "colEx";
+            this.colEx.ReadOnly = true;
+            // 
+            // colSets
+            // 
+            this.colSets.DataPropertyName = "TotalSets";
+            this.colSets.HeaderText = "Подходов";
+            this.colSets.Name = "colSets";
+            this.colSets.ReadOnly = true;
+            // 
+            // colReps
+            // 
+            this.colReps.DataPropertyName = "TotalReps";
+            this.colReps.HeaderText = "Повторений";
+            this.colReps.Name = "colReps";
+            this.colReps.ReadOnly = true;
+            // 
+            // colMax
+            // 
+            this.colMax.DataPropertyName = "MaxWeight";
+            this.colMax.HeaderText = "Макс. вес, кг";
+            this.colMax.Name = "colMax";
+            this.colMax.ReadOnly = true;
+            // 
+            // pagePrograms
+            // 
+            this.pagePrograms.Controls.Add(this.materialLabel60);
+            this.pagePrograms.Controls.Add(this.cardExercises);
+            this.pagePrograms.Controls.Add(this.cardProgram);
+            this.pagePrograms.Controls.Add(this.label2);
+            this.pagePrograms.Location = new System.Drawing.Point(3, 2);
+            this.pagePrograms.Name = "pagePrograms";
+            this.pagePrograms.Size = new System.Drawing.Size(937, 724);
+            this.pagePrograms.TabIndex = 40;
+            // 
+            // materialLabel60
+            // 
+            this.materialLabel60.BackColor = System.Drawing.Color.Transparent;
+            this.materialLabel60.Location = new System.Drawing.Point(22, 401);
+            this.materialLabel60.Name = "materialLabel60";
+            this.materialLabel60.Size = new System.Drawing.Size(164, 23);
+            this.materialLabel60.TabIndex = 24;
+            this.materialLabel60.Text = "Упражнение прогграммы";
+            // 
+            // cardExercises
+            // 
+            this.cardExercises.BackColor = System.Drawing.Color.White;
+            this.cardExercises.Controls.Add(this.programExercisesViewDataGridView);
+            this.cardExercises.Controls.Add(this.materialLabel59);
+            this.cardExercises.CornerRadius = 12;
+            this.cardExercises.Location = new System.Drawing.Point(20, 430);
+            this.cardExercises.Name = "cardExercises";
+            this.cardExercises.Padding = new System.Windows.Forms.Padding(16);
+            this.cardExercises.Size = new System.Drawing.Size(831, 273);
+            this.cardExercises.TabIndex = 23;
             // 
             // programExercisesViewDataGridView
             // 
@@ -1506,6 +1644,7 @@
             this.programExercisesViewDataGridView.AllowUserToDeleteRows = false;
             this.programExercisesViewDataGridView.AutoGenerateColumns = false;
             this.programExercisesViewDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.programExercisesViewDataGridView.BackgroundColor = System.Drawing.Color.White;
             this.programExercisesViewDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.programExercisesViewDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn6,
@@ -1526,57 +1665,6 @@
             this.programExercisesViewDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.programExercisesViewDataGridView.Size = new System.Drawing.Size(799, 241);
             this.programExercisesViewDataGridView.TabIndex = 0;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Name";
-            this.dataGridViewTextBoxColumn2.FillWeight = 79.18781F;
-            this.dataGridViewTextBoxColumn2.HeaderText = "Название";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Description";
-            this.dataGridViewTextBoxColumn3.FillWeight = 79.18781F;
-            this.dataGridViewTextBoxColumn3.HeaderText = "Описание";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "DurationWeeks";
-            this.dataGridViewTextBoxColumn4.FillWeight = 162.4366F;
-            this.dataGridViewTextBoxColumn4.HeaderText = "Недель";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 80;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Тренер";
-            this.dataGridViewTextBoxColumn5.FillWeight = 79.18781F;
-            this.dataGridViewTextBoxColumn5.HeaderText = "AuthorName";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // materialLabel60
-            // 
-            this.materialLabel60.BackColor = System.Drawing.Color.Transparent;
-            this.materialLabel60.Location = new System.Drawing.Point(22, 401);
-            this.materialLabel60.Name = "materialLabel60";
-            this.materialLabel60.Size = new System.Drawing.Size(164, 23);
-            this.materialLabel60.TabIndex = 24;
-            this.materialLabel60.Text = "Упражнение прогграммы";
             // 
             // dataGridViewTextBoxColumn6
             // 
@@ -1642,38 +1730,114 @@
             this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
             this.dataGridViewTextBoxColumn13.ReadOnly = true;
             // 
+            // materialLabel59
+            // 
+            this.materialLabel59.BackColor = System.Drawing.Color.Transparent;
+            this.materialLabel59.Location = new System.Drawing.Point(25, 16);
+            this.materialLabel59.Name = "materialLabel59";
+            this.materialLabel59.Size = new System.Drawing.Size(157, 23);
+            this.materialLabel59.TabIndex = 0;
+            this.materialLabel59.Text = "Упражнение программы";
+            // 
+            // cardProgram
+            // 
+            this.cardProgram.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cardProgram.BackColor = System.Drawing.Color.White;
+            this.cardProgram.Controls.Add(this.programViewDataGridView);
+            this.cardProgram.CornerRadius = 12;
+            this.cardProgram.Location = new System.Drawing.Point(20, 55);
+            this.cardProgram.Name = "cardProgram";
+            this.cardProgram.Padding = new System.Windows.Forms.Padding(16);
+            this.cardProgram.Size = new System.Drawing.Size(831, 314);
+            this.cardProgram.TabIndex = 22;
+            // 
+            // programViewDataGridView
+            // 
+            this.programViewDataGridView.AllowUserToAddRows = false;
+            this.programViewDataGridView.AllowUserToDeleteRows = false;
+            this.programViewDataGridView.AutoGenerateColumns = false;
+            this.programViewDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.programViewDataGridView.BackgroundColor = System.Drawing.Color.White;
+            this.programViewDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.programViewDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4});
+            this.programViewDataGridView.DataSource = this.programViewBindingSource;
+            this.programViewDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.programViewDataGridView.GridColor = System.Drawing.SystemColors.ActiveCaption;
+            this.programViewDataGridView.Location = new System.Drawing.Point(16, 16);
+            this.programViewDataGridView.Name = "programViewDataGridView";
+            this.programViewDataGridView.ReadOnly = true;
+            this.programViewDataGridView.RowHeadersVisible = false;
+            this.programViewDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.programViewDataGridView.Size = new System.Drawing.Size(799, 282);
+            this.programViewDataGridView.TabIndex = 1;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Name";
+            this.dataGridViewTextBoxColumn2.FillWeight = 79.18781F;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Название";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Description";
+            this.dataGridViewTextBoxColumn3.FillWeight = 79.18781F;
+            this.dataGridViewTextBoxColumn3.HeaderText = "Описание";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "DurationWeeks";
+            this.dataGridViewTextBoxColumn4.FillWeight = 162.4366F;
+            this.dataGridViewTextBoxColumn4.HeaderText = "Недель";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 80;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(12, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(275, 30);
+            this.label2.TabIndex = 21;
+            this.label2.Text = "Программы тренировок";
+            // 
             // pageWorkouts
             // 
             this.pageWorkouts.Controls.Add(this.pageHome);
-            this.pageWorkouts.Location = new System.Drawing.Point(16, 14);
+            this.pageWorkouts.Location = new System.Drawing.Point(8, 6);
             this.pageWorkouts.Name = "pageWorkouts";
             this.pageWorkouts.Size = new System.Drawing.Size(927, 716);
-            this.pageWorkouts.TabIndex = 36;
+            this.pageWorkouts.TabIndex = 41;
             // 
             // pageHome
             // 
-            this.pageHome.Controls.Add(this.materialLabel5);
             this.pageHome.Controls.Add(this.MaterialCard);
             this.pageHome.Controls.Add(this.cardExerciseCount);
             this.pageHome.Controls.Add(this.cardWorkoutCount);
             this.pageHome.Controls.Add(this.cardWelcome);
-            this.pageHome.Controls.Add(this.dgvRecentWorkouts);
-            this.pageHome.Controls.Add(this.cardRecentWorkouts);
             this.pageHome.Location = new System.Drawing.Point(8, 8);
             this.pageHome.Name = "pageHome";
             this.pageHome.Size = new System.Drawing.Size(927, 716);
-            this.pageHome.TabIndex = 36;
-            // 
-            // materialLabel5
-            // 
-            this.materialLabel5.BackColor = System.Drawing.Color.Transparent;
-            this.materialLabel5.Font = new System.Drawing.Font("Segoe UI Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.materialLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(51)))));
-            this.materialLabel5.Location = new System.Drawing.Point(14, 328);
-            this.materialLabel5.Name = "materialLabel5";
-            this.materialLabel5.Size = new System.Drawing.Size(450, 40);
-            this.materialLabel5.TabIndex = 15;
-            this.materialLabel5.Text = "Последние тренировки";
+            this.pageHome.TabIndex = 40;
             // 
             // MaterialCard
             // 
@@ -1813,40 +1977,12 @@
             this.materialLabel4.TabIndex = 5;
             this.materialLabel4.Text = "Твой прогресс начинаетя здесь";
             // 
-            // dgvRecentWorkouts
-            // 
-            this.dgvRecentWorkouts.AllowUserToAddRows = false;
-            this.dgvRecentWorkouts.AllowUserToDeleteRows = false;
-            this.dgvRecentWorkouts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvRecentWorkouts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvRecentWorkouts.BackgroundColor = System.Drawing.Color.White;
-            this.dgvRecentWorkouts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRecentWorkouts.Location = new System.Drawing.Point(15, 371);
-            this.dgvRecentWorkouts.MultiSelect = false;
-            this.dgvRecentWorkouts.Name = "dgvRecentWorkouts";
-            this.dgvRecentWorkouts.ReadOnly = true;
-            this.dgvRecentWorkouts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvRecentWorkouts.Size = new System.Drawing.Size(868, 328);
-            this.dgvRecentWorkouts.TabIndex = 16;
-            // 
-            // cardRecentWorkouts
-            // 
-            this.cardRecentWorkouts.BackColor = System.Drawing.Color.White;
-            this.cardRecentWorkouts.CornerRadius = 12;
-            this.cardRecentWorkouts.Location = new System.Drawing.Point(33, 397);
-            this.cardRecentWorkouts.Name = "cardRecentWorkouts";
-            this.cardRecentWorkouts.Padding = new System.Windows.Forms.Padding(16);
-            this.cardRecentWorkouts.Size = new System.Drawing.Size(850, 280);
-            this.cardRecentWorkouts.TabIndex = 17;
-            // 
             // FrmAthlete
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(245)))), ((int)(((byte)(252)))));
-            this.ClientSize = new System.Drawing.Size(1199, 729);
+            this.ClientSize = new System.Drawing.Size(1200, 729);
             this.Controls.Add(this.plnBrand);
             this.Controls.Add(this.panelContent);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -1859,9 +1995,20 @@
             this.plnBrand.ResumeLayout(false);
             this.panelContent.ResumeLayout(false);
             this.pageResults.ResumeLayout(false);
-            this.materialCard1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dvgExerciseProgress)).EndInit();
+            this.cardUniqueExercises.ResumeLayout(false);
+            this.cardTotalVolumeTitle.ResumeLayout(false);
+            this.cardTotalSets.ResumeLayout(false);
+            this.cardPersonalInfo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.programExercisesViewBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.programViewBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.workoutDiaryDBDataSet1)).EndInit();
             this.pageExercises.ResumeLayout(false);
             this.scrollExercises.ResumeLayout(false);
+            this.materialCard15.ResumeLayout(false);
+            this.materialCard16.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
             this.materialCard13.ResumeLayout(false);
             this.materialCard14.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
@@ -1890,27 +2037,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.cardExercise1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.materialCard15.ResumeLayout(false);
-            this.materialCard16.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.workoutDiaryDBDataSet2)).EndInit();
             this.pagePrograms.ResumeLayout(false);
             this.pagePrograms.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.workoutDiaryDBDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.workoutDiaryDBDataSet2)).EndInit();
-            this.cardProgram.ResumeLayout(false);
             this.cardExercises.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.programViewBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.programViewDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.programExercisesViewBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.programExercisesViewDataGridView)).EndInit();
+            this.cardProgram.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.programViewDataGridView)).EndInit();
             this.pageWorkouts.ResumeLayout(false);
             this.pageHome.ResumeLayout(false);
             this.MaterialCard.ResumeLayout(false);
             this.cardExerciseCount.ResumeLayout(false);
             this.cardWorkoutCount.ResumeLayout(false);
             this.cardWelcome.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRecentWorkouts)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1927,13 +2066,6 @@
         private WorkoutDiaryDBDataSet workoutDiaryDBDataSet1;
         private WorkoutDiaryDBDataSetTableAdapters.ExercisesTableAdapter exercisesTableAdapter1;
         private System.Windows.Forms.Panel panelContent;
-        private System.Windows.Forms.Panel pageResults;
-        private Material3.WinForms.Controls.MaterialCard materialCard1;
-        private Material3.WinForms.Controls.MaterialLabel materialLabel8;
-        private Material3.WinForms.Controls.MaterialLabel materialLabel7;
-        private Material3.WinForms.Controls.MaterialLabel materialLabel6;
-        private Material3.WinForms.Controls.MaterialLabel lblProfileLogin;
-        private Material3.WinForms.Controls.MaterialLabel lblPersonalInfo;
         private WorkoutDiaryDBDataSet workoutDiaryDBDataSet2;
         private System.Windows.Forms.Panel pageExercises;
         private Material3.WinForms.Controls.MaterialScrollPanel scrollExercises;
@@ -2019,35 +2151,36 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private Material3.WinForms.Controls.MaterialLabel materialLabel10;
         private Material3.WinForms.Controls.MaterialLabel materialLabel9;
-        private System.Windows.Forms.Panel pagePrograms;
-        private System.Windows.Forms.Label label2;
-        private Material3.WinForms.Controls.MaterialCard cardExercises;
-        private Material3.WinForms.Controls.MaterialCard cardProgram;
-        private Material3.WinForms.Controls.MaterialLabel materialLabel59;
         private System.Windows.Forms.BindingSource programViewBindingSource;
         private WorkoutDiaryDBDataSetTableAdapters.ProgramViewTableAdapter programViewTableAdapter;
         private WorkoutDiaryDBDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.DataGridView programViewDataGridView;
         private System.Windows.Forms.BindingSource programExercisesViewBindingSource;
         private WorkoutDiaryDBDataSetTableAdapters.ProgramExercisesViewTableAdapter programExercisesViewTableAdapter;
-        private System.Windows.Forms.DataGridView programExercisesViewDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private Material3.WinForms.Controls.MaterialLabel materialLabel60;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.Panel pageResults;
+        private System.Windows.Forms.DataGridView dvgExerciseProgress;
+        private Material3.WinForms.Controls.MaterialLabel materialLabel63;
+        private Material3.WinForms.Controls.MaterialCard cardUniqueExercises;
+        private Material3.WinForms.Controls.MaterialLabel lblUniquercisesValue;
+        private Material3.WinForms.Controls.MaterialLabel materialLabel62;
+        private Material3.WinForms.Controls.MaterialCard cardTotalVolumeTitle;
+        private Material3.WinForms.Controls.MaterialLabel lblTotalVolumeValue;
+        private Material3.WinForms.Controls.MaterialLabel materialLabel61;
+        private Material3.WinForms.Controls.MaterialCard cardTotalSets;
+        private Material3.WinForms.Controls.MaterialLabel lblTotalSetsValue;
+        private Material3.WinForms.Controls.MaterialLabel materialLabel8;
+        private Material3.WinForms.Controls.MaterialCard cardPersonalInfo;
+        private Material3.WinForms.Controls.MaterialLabel lblRoleTitle;
+        private Material3.WinForms.Controls.MaterialLabel lblPasswordValue;
+        private Material3.WinForms.Controls.MaterialLabel lblFullNameTitle;
+        private Material3.WinForms.Controls.MaterialLabel lblLoginTitle;
+        private Material3.WinForms.Controls.MaterialLabel lblPersonalInfo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colEx;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSets;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colReps;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMax;
         private System.Windows.Forms.Panel pageWorkouts;
         private System.Windows.Forms.Panel pageHome;
-        private Material3.WinForms.Controls.MaterialLabel materialLabel5;
         private Material3.WinForms.Controls.MaterialCard MaterialCard;
         private Material3.WinForms.Controls.MaterialLabel lblLastWorkout;
         private Material3.WinForms.Controls.MaterialLabel materialLabel2;
@@ -2060,7 +2193,25 @@
         private Material3.WinForms.Controls.MaterialCard cardWelcome;
         private Material3.WinForms.Controls.MaterialLabel materialLabel3;
         private Material3.WinForms.Controls.MaterialLabel materialLabel4;
-        private System.Windows.Forms.DataGridView dgvRecentWorkouts;
-        private Material3.WinForms.Controls.MaterialCard cardRecentWorkouts;
+        private System.Windows.Forms.Panel pagePrograms;
+        private Material3.WinForms.Controls.MaterialLabel materialLabel60;
+        private Material3.WinForms.Controls.MaterialCard cardExercises;
+        private System.Windows.Forms.DataGridView programExercisesViewDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private Material3.WinForms.Controls.MaterialLabel materialLabel59;
+        private Material3.WinForms.Controls.MaterialCard cardProgram;
+        private System.Windows.Forms.DataGridView programViewDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.Label label2;
     }
 }

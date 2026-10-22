@@ -42,6 +42,8 @@ namespace WorkoutDiary {
         
         private ProgramExercisesViewDataTable tableProgramExercisesView;
         
+        private ExerciseProgressDataTable tableExerciseProgress;
+        
         private global::System.Data.DataRelation relationFK_Exercises_MuscleGroups;
         
         private global::System.Data.DataRelation relationFK_ProgramExercises_Exercises;
@@ -59,12 +61,6 @@ namespace WorkoutDiary {
         private global::System.Data.DataRelation relationFK_Workouts_Users;
         
         private global::System.Data.DataRelation relationFK_ProgramExercises_Programs1;
-        
-        private global::System.Data.DataRelation relationFK_Workouts_Programs1;
-        
-        private global::System.Data.DataRelation relationFK_ProgramExercises_Exercises1;
-        
-        private global::System.Data.DataRelation relationFK_Sets_Exercises1;
         
         private global::System.Data.DataRelation relationProgramView_ProgramExercisesView;
         
@@ -122,6 +118,9 @@ namespace WorkoutDiary {
                 }
                 if ((ds.Tables["ProgramExercisesView"] != null)) {
                     base.Tables.Add(new ProgramExercisesViewDataTable(ds.Tables["ProgramExercisesView"]));
+                }
+                if ((ds.Tables["ExerciseProgress"] != null)) {
+                    base.Tables.Add(new ExerciseProgressDataTable(ds.Tables["ExerciseProgress"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -233,6 +232,16 @@ namespace WorkoutDiary {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public ExerciseProgressDataTable ExerciseProgress {
+            get {
+                return this.tableExerciseProgress;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -325,6 +334,9 @@ namespace WorkoutDiary {
                 if ((ds.Tables["ProgramExercisesView"] != null)) {
                     base.Tables.Add(new ProgramExercisesViewDataTable(ds.Tables["ProgramExercisesView"]));
                 }
+                if ((ds.Tables["ExerciseProgress"] != null)) {
+                    base.Tables.Add(new ExerciseProgressDataTable(ds.Tables["ExerciseProgress"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -412,6 +424,12 @@ namespace WorkoutDiary {
                     this.tableProgramExercisesView.InitVars();
                 }
             }
+            this.tableExerciseProgress = ((ExerciseProgressDataTable)(base.Tables["ExerciseProgress"]));
+            if ((initTable == true)) {
+                if ((this.tableExerciseProgress != null)) {
+                    this.tableExerciseProgress.InitVars();
+                }
+            }
             this.relationFK_Exercises_MuscleGroups = this.Relations["FK_Exercises_MuscleGroups"];
             this.relationFK_ProgramExercises_Exercises = this.Relations["FK_ProgramExercises_Exercises"];
             this.relationFK_ProgramExercises_Programs = this.Relations["FK_ProgramExercises_Programs"];
@@ -421,9 +439,6 @@ namespace WorkoutDiary {
             this.relationFK_Workouts_Programs = this.Relations["FK_Workouts_Programs"];
             this.relationFK_Workouts_Users = this.Relations["FK_Workouts_Users"];
             this.relationFK_ProgramExercises_Programs1 = this.Relations["FK_ProgramExercises_Programs1"];
-            this.relationFK_Workouts_Programs1 = this.Relations["FK_Workouts_Programs1"];
-            this.relationFK_ProgramExercises_Exercises1 = this.Relations["FK_ProgramExercises_Exercises1"];
-            this.relationFK_Sets_Exercises1 = this.Relations["FK_Sets_Exercises1"];
             this.relationProgramView_ProgramExercisesView = this.Relations["ProgramView_ProgramExercisesView"];
         }
         
@@ -433,7 +448,7 @@ namespace WorkoutDiary {
             this.DataSetName = "WorkoutDiaryDBDataSet";
             this.Prefix = "";
             this.Namespace = "http://tempuri.org/WorkoutDiaryDBDataSet.xsd";
-            this.EnforceConstraints = true;
+            this.EnforceConstraints = false;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableExercises = new ExercisesDataTable();
             base.Tables.Add(this.tableExercises);
@@ -453,6 +468,8 @@ namespace WorkoutDiary {
             base.Tables.Add(this.tableProgramView);
             this.tableProgramExercisesView = new ProgramExercisesViewDataTable();
             base.Tables.Add(this.tableProgramExercisesView);
+            this.tableExerciseProgress = new ExerciseProgressDataTable();
+            base.Tables.Add(this.tableExerciseProgress);
             this.relationFK_Exercises_MuscleGroups = new global::System.Data.DataRelation("FK_Exercises_MuscleGroups", new global::System.Data.DataColumn[] {
                         this.tableMuscleGroups.IdColumn}, new global::System.Data.DataColumn[] {
                         this.tableExercises.MuscleGroupIdColumn}, false);
@@ -489,21 +506,9 @@ namespace WorkoutDiary {
                         this.tableProgramView.IdColumn}, new global::System.Data.DataColumn[] {
                         this.tableProgramExercises.ProgramIdColumn}, false);
             this.Relations.Add(this.relationFK_ProgramExercises_Programs1);
-            this.relationFK_Workouts_Programs1 = new global::System.Data.DataRelation("FK_Workouts_Programs1", new global::System.Data.DataColumn[] {
-                        this.tableProgramView.IdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableWorkouts.ProgramIdColumn}, false);
-            this.Relations.Add(this.relationFK_Workouts_Programs1);
-            this.relationFK_ProgramExercises_Exercises1 = new global::System.Data.DataRelation("FK_ProgramExercises_Exercises1", new global::System.Data.DataColumn[] {
-                        this.tableProgramExercisesView.IdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableProgramExercises.ExerciseIdColumn}, false);
-            this.Relations.Add(this.relationFK_ProgramExercises_Exercises1);
-            this.relationFK_Sets_Exercises1 = new global::System.Data.DataRelation("FK_Sets_Exercises1", new global::System.Data.DataColumn[] {
-                        this.tableProgramExercisesView.IdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableSets.ExerciseIdColumn}, false);
-            this.Relations.Add(this.relationFK_Sets_Exercises1);
             this.relationProgramView_ProgramExercisesView = new global::System.Data.DataRelation("ProgramView_ProgramExercisesView", new global::System.Data.DataColumn[] {
                         this.tableProgramView.IdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableProgramExercisesView.IdColumn}, false);
+                        this.tableProgramExercisesView.ProgramIdColumn}, false);
             this.Relations.Add(this.relationProgramView_ProgramExercisesView);
         }
         
@@ -558,6 +563,12 @@ namespace WorkoutDiary {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private bool ShouldSerializeProgramExercisesView() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private bool ShouldSerializeExerciseProgress() {
             return false;
         }
         
@@ -642,6 +653,9 @@ namespace WorkoutDiary {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public delegate void ProgramExercisesViewRowChangeEventHandler(object sender, ProgramExercisesViewRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public delegate void ExerciseProgressRowChangeEventHandler(object sender, ExerciseProgressRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -3482,17 +3496,20 @@ namespace WorkoutDiary {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ProgramExercisesViewRow AddProgramExercisesViewRow(int ProgramId, int DayNumber, int OrderNum, string ExerciseName, string Equipment, int TargetSets, int TargetReps) {
+            public ProgramExercisesViewRow AddProgramExercisesViewRow(ProgramViewRow parentProgramViewRowByProgramView_ProgramExercisesView, int DayNumber, int OrderNum, string ExerciseName, string Equipment, int TargetSets, int TargetReps) {
                 ProgramExercisesViewRow rowProgramExercisesViewRow = ((ProgramExercisesViewRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        ProgramId,
+                        null,
                         DayNumber,
                         OrderNum,
                         ExerciseName,
                         Equipment,
                         TargetSets,
                         TargetReps};
+                if ((parentProgramViewRowByProgramView_ProgramExercisesView != null)) {
+                    columnValuesArray[1] = parentProgramViewRowByProgramView_ProgramExercisesView[0];
+                }
                 rowProgramExercisesViewRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowProgramExercisesViewRow);
                 return rowProgramExercisesViewRow;
@@ -3653,6 +3670,300 @@ namespace WorkoutDiary {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "ProgramExercisesViewDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class ExerciseProgressDataTable : global::System.Data.TypedTableBase<ExerciseProgressRow> {
+            
+            private global::System.Data.DataColumn columnExerciseName;
+            
+            private global::System.Data.DataColumn columnTotalSets;
+            
+            private global::System.Data.DataColumn columnTotalReps;
+            
+            private global::System.Data.DataColumn columnMaxWeight;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ExerciseProgressDataTable() {
+                this.TableName = "ExerciseProgress";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal ExerciseProgressDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected ExerciseProgressDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ExerciseNameColumn {
+                get {
+                    return this.columnExerciseName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn TotalSetsColumn {
+                get {
+                    return this.columnTotalSets;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn TotalRepsColumn {
+                get {
+                    return this.columnTotalReps;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn MaxWeightColumn {
+                get {
+                    return this.columnMaxWeight;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ExerciseProgressRow this[int index] {
+                get {
+                    return ((ExerciseProgressRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event ExerciseProgressRowChangeEventHandler ExerciseProgressRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event ExerciseProgressRowChangeEventHandler ExerciseProgressRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event ExerciseProgressRowChangeEventHandler ExerciseProgressRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event ExerciseProgressRowChangeEventHandler ExerciseProgressRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void AddExerciseProgressRow(ExerciseProgressRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ExerciseProgressRow AddExerciseProgressRow(string ExerciseName, int TotalSets, int TotalReps, decimal MaxWeight) {
+                ExerciseProgressRow rowExerciseProgressRow = ((ExerciseProgressRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        ExerciseName,
+                        TotalSets,
+                        TotalReps,
+                        MaxWeight};
+                rowExerciseProgressRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowExerciseProgressRow);
+                return rowExerciseProgressRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                ExerciseProgressDataTable cln = ((ExerciseProgressDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new ExerciseProgressDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal void InitVars() {
+                this.columnExerciseName = base.Columns["ExerciseName"];
+                this.columnTotalSets = base.Columns["TotalSets"];
+                this.columnTotalReps = base.Columns["TotalReps"];
+                this.columnMaxWeight = base.Columns["MaxWeight"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            private void InitClass() {
+                this.columnExerciseName = new global::System.Data.DataColumn("ExerciseName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnExerciseName);
+                this.columnTotalSets = new global::System.Data.DataColumn("TotalSets", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTotalSets);
+                this.columnTotalReps = new global::System.Data.DataColumn("TotalReps", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTotalReps);
+                this.columnMaxWeight = new global::System.Data.DataColumn("MaxWeight", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMaxWeight);
+                this.columnExerciseName.AllowDBNull = false;
+                this.columnExerciseName.MaxLength = 100;
+                this.columnTotalSets.ReadOnly = true;
+                this.columnTotalReps.ReadOnly = true;
+                this.columnMaxWeight.ReadOnly = true;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ExerciseProgressRow NewExerciseProgressRow() {
+                return ((ExerciseProgressRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new ExerciseProgressRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(ExerciseProgressRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.ExerciseProgressRowChanged != null)) {
+                    this.ExerciseProgressRowChanged(this, new ExerciseProgressRowChangeEvent(((ExerciseProgressRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.ExerciseProgressRowChanging != null)) {
+                    this.ExerciseProgressRowChanging(this, new ExerciseProgressRowChangeEvent(((ExerciseProgressRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.ExerciseProgressRowDeleted != null)) {
+                    this.ExerciseProgressRowDeleted(this, new ExerciseProgressRowChangeEvent(((ExerciseProgressRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.ExerciseProgressRowDeleting != null)) {
+                    this.ExerciseProgressRowDeleting(this, new ExerciseProgressRowChangeEvent(((ExerciseProgressRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void RemoveExerciseProgressRow(ExerciseProgressRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                WorkoutDiaryDBDataSet ds = new WorkoutDiaryDBDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "ExerciseProgressDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -4029,17 +4340,6 @@ namespace WorkoutDiary {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_ProgramExercises_Programs1"]);
                 }
             }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ProgramExercisesViewRow ProgramExercisesViewRow {
-                get {
-                    return ((ProgramExercisesViewRow)(this.GetParentRow(this.Table.ParentRelations["FK_ProgramExercises_Exercises1"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_ProgramExercises_Exercises1"]);
-                }
-            }
         }
         
         /// <summary>
@@ -4272,17 +4572,6 @@ namespace WorkoutDiary {
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_Sets_Workouts"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ProgramExercisesViewRow ProgramExercisesViewRow {
-                get {
-                    return ((ProgramExercisesViewRow)(this.GetParentRow(this.Table.ParentRelations["FK_Sets_Exercises1"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_Sets_Exercises1"]);
                 }
             }
         }
@@ -4532,17 +4821,6 @@ namespace WorkoutDiary {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ProgramViewRow ProgramViewRow {
-                get {
-                    return ((ProgramViewRow)(this.GetParentRow(this.Table.ParentRelations["FK_Workouts_Programs1"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_Workouts_Programs1"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsNotesNull() {
                 return this.IsNull(this.tableWorkouts.NotesColumn);
             }
@@ -4671,17 +4949,6 @@ namespace WorkoutDiary {
                 }
                 else {
                     return ((ProgramExercisesRow[])(base.GetChildRows(this.Table.ChildRelations["FK_ProgramExercises_Programs1"])));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public WorkoutsRow[] GetWorkoutsRows() {
-                if ((this.Table.ChildRelations["FK_Workouts_Programs1"] == null)) {
-                    return new WorkoutsRow[0];
-                }
-                else {
-                    return ((WorkoutsRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Workouts_Programs1"])));
                 }
             }
             
@@ -4826,27 +5093,115 @@ namespace WorkoutDiary {
             public void SetEquipmentNull() {
                 this[this.tableProgramExercisesView.EquipmentColumn] = global::System.Convert.DBNull;
             }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class ExerciseProgressRow : global::System.Data.DataRow {
+            
+            private ExerciseProgressDataTable tableExerciseProgress;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ProgramExercisesRow[] GetProgramExercisesRows() {
-                if ((this.Table.ChildRelations["FK_ProgramExercises_Exercises1"] == null)) {
-                    return new ProgramExercisesRow[0];
+            internal ExerciseProgressRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableExerciseProgress = ((ExerciseProgressDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string ExerciseName {
+                get {
+                    return ((string)(this[this.tableExerciseProgress.ExerciseNameColumn]));
                 }
-                else {
-                    return ((ProgramExercisesRow[])(base.GetChildRows(this.Table.ChildRelations["FK_ProgramExercises_Exercises1"])));
+                set {
+                    this[this.tableExerciseProgress.ExerciseNameColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public SetsRow[] GetSetsRows() {
-                if ((this.Table.ChildRelations["FK_Sets_Exercises1"] == null)) {
-                    return new SetsRow[0];
+            public int TotalSets {
+                get {
+                    try {
+                        return ((int)(this[this.tableExerciseProgress.TotalSetsColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'TotalSets\' в таблице \'ExerciseProgress\' равно DBNull.", e);
+                    }
                 }
-                else {
-                    return ((SetsRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Sets_Exercises1"])));
+                set {
+                    this[this.tableExerciseProgress.TotalSetsColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int TotalReps {
+                get {
+                    try {
+                        return ((int)(this[this.tableExerciseProgress.TotalRepsColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'TotalReps\' в таблице \'ExerciseProgress\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableExerciseProgress.TotalRepsColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal MaxWeight {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableExerciseProgress.MaxWeightColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'MaxWeight\' в таблице \'ExerciseProgress\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableExerciseProgress.MaxWeightColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsTotalSetsNull() {
+                return this.IsNull(this.tableExerciseProgress.TotalSetsColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetTotalSetsNull() {
+                this[this.tableExerciseProgress.TotalSetsColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsTotalRepsNull() {
+                return this.IsNull(this.tableExerciseProgress.TotalRepsColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetTotalRepsNull() {
+                this[this.tableExerciseProgress.TotalRepsColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsMaxWeightNull() {
+                return this.IsNull(this.tableExerciseProgress.MaxWeightColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetMaxWeightNull() {
+                this[this.tableExerciseProgress.MaxWeightColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -5142,6 +5497,40 @@ namespace WorkoutDiary {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public ProgramExercisesViewRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public class ExerciseProgressRowChangeEvent : global::System.EventArgs {
+            
+            private ExerciseProgressRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ExerciseProgressRowChangeEvent(ExerciseProgressRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ExerciseProgressRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -6805,17 +7194,50 @@ SELECT Id, WorkoutId, ExerciseId, SetNumber, Weight, Reps, RestSec FROM Sets WHE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[6];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Id, WorkoutId, ExerciseId, SetNumber, Weight, Reps, RestSec FROM dbo.Sets";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT COUNT(DISTINCT s.ExerciseId)\r\nFROM Sets s\r\nINNER JOIN Workouts w ON s.Work" +
-                "outId = w.Id\r\nWHERE w.UserId = @UserId";
+            this._commandCollection[1].CommandText = @"SELECT
+    e.Name AS ExerciseName,
+    COUNT(*) AS TotalSets,
+    COALESCE(SUM(s.Reps), 0) AS TotalReps,
+    COALESCE(MAX(s.Weight), 0) AS MaxWeight
+FROM dbo.Sets s
+INNER JOIN dbo.Workouts w ON w.Id = s.WorkoutId
+INNER JOIN dbo.Exercises e ON e.Id = s.ExerciseId
+WHERE w.UserId = @UserId
+GROUP BY e.Id, e.Name
+ORDER BY e.Name";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "UserId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT COUNT(DISTINCT s.ExerciseId)\r\nFROM Sets s\r\nINNER JOIN Workouts w ON s.Work" +
+                "outId = w.Id\r\nWHERE w.UserId = @UserId";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "UserId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "SELECT COUNT(*)\r\nFROM dbo.Sets s\r\nINNER JOIN dbo.Workouts w ON w.Id = s.WorkoutId" +
+                "\r\nWHERE w.UserId = @UserId";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "UserId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = "SELECT COALESCE(SUM(CAST(s.Weight AS decimal(18,2)) * s.Reps), 0)\r\nFROM dbo.Sets " +
+                "s\r\nINNER JOIN dbo.Workouts w ON w.Id = s.WorkoutId\r\nWHERE w.UserId = @UserId";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "UserId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[5].Connection = this.Connection;
+            this._commandCollection[5].CommandText = "SELECT COUNT(DISTINCT s.ExerciseId)\r\nFROM dbo.Sets s\r\nINNER JOIN dbo.Workouts w O" +
+                "N w.Id = s.WorkoutId\r\nWHERE w.UserId = @UserId";
+            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "UserId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6837,6 +7259,32 @@ SELECT Id, WorkoutId, ExerciseId, SetNumber, Weight, Reps, RestSec FROM Sets WHE
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual WorkoutDiaryDBDataSet.SetsDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            WorkoutDiaryDBDataSet.SetsDataTable dataTable = new WorkoutDiaryDBDataSet.SetsDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(WorkoutDiaryDBDataSet.SetsDataTable dataTable, int UserId) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(UserId));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual WorkoutDiaryDBDataSet.SetsDataTable GetExerciseProgress(int UserId) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(UserId));
             WorkoutDiaryDBDataSet.SetsDataTable dataTable = new WorkoutDiaryDBDataSet.SetsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -6973,7 +7421,94 @@ SELECT Id, WorkoutId, ExerciseId, SetNumber, Weight, Reps, RestSec FROM Sets WHE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual global::System.Nullable<int> GetExerciseCount(int UserId) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            command.Parameters[0].Value = ((int)(UserId));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return new global::System.Nullable<int>();
+            }
+            else {
+                return new global::System.Nullable<int>(((int)(returnValue)));
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual global::System.Nullable<int> GetTotalSets(int UserId) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
+            command.Parameters[0].Value = ((int)(UserId));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return new global::System.Nullable<int>();
+            }
+            else {
+                return new global::System.Nullable<int>(((int)(returnValue)));
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual global::System.Nullable<decimal> GetTotalVolume(int UserId) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[4];
+            command.Parameters[0].Value = ((int)(UserId));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return new global::System.Nullable<decimal>();
+            }
+            else {
+                return new global::System.Nullable<decimal>(((decimal)(returnValue)));
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual global::System.Nullable<int> GetUniqueExercises(int UserId) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[5];
             command.Parameters[0].Value = ((int)(UserId));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -7180,7 +7715,7 @@ SELECT Id, Login, PasswordHash, FullName, Role, TrainerId FROM Users WHERE (Id =
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[6];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[7];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Id, Login, PasswordHash, FullName, Role, TrainerId FROM dbo.Users";
@@ -7211,14 +7746,20 @@ SELECT Id, Login, PasswordHash, FullName, Role, TrainerId FROM Users WHERE (Id =
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = "INSERT INTO dbo.Users (Login, PasswordHash, FullName, Role, TrainerId)\r\nVALUES (@" +
-                "Login, @PasswordHash, @FullName, @Role, @TrainerId)";
+            this._commandCollection[5].CommandText = "SELECT Id, Login, PasswordHash, FullName, Role, TrainerId\r\nFROM Users\r\nWHERE Id =" +
+                " @UserId";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Login", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Login", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PasswordHash", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "PasswordHash", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FullName", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "FullName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Role", global::System.Data.SqlDbType.NVarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "Role", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TrainerId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "TrainerId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[6].Connection = this.Connection;
+            this._commandCollection[6].CommandText = "INSERT INTO dbo.Users (Login, PasswordHash, FullName, Role, TrainerId)\r\nVALUES (@" +
+                "Login, @PasswordHash, @FullName, @Role, @TrainerId)";
+            this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Login", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Login", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PasswordHash", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "PasswordHash", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FullName", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "FullName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Role", global::System.Data.SqlDbType.NVarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "Role", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TrainerId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "TrainerId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7372,6 +7913,18 @@ SELECT Id, Login, PasswordHash, FullName, Role, TrainerId FROM Users WHERE (Id =
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual WorkoutDiaryDBDataSet.UsersDataTable GetUsersData() {
             this.Adapter.SelectCommand = this.CommandCollection[4];
+            WorkoutDiaryDBDataSet.UsersDataTable dataTable = new WorkoutDiaryDBDataSet.UsersDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual WorkoutDiaryDBDataSet.UsersDataTable GetUserInfo(int UserId) {
+            this.Adapter.SelectCommand = this.CommandCollection[5];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(UserId));
             WorkoutDiaryDBDataSet.UsersDataTable dataTable = new WorkoutDiaryDBDataSet.UsersDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -7643,7 +8196,7 @@ SELECT Id, Login, PasswordHash, FullName, Role, TrainerId FROM Users WHERE (Id =
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
         public virtual int InsertUser(string Login, string PasswordHash, string FullName, string Role, global::System.Nullable<int> TrainerId) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[5];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[6];
             if ((Login == null)) {
                 throw new global::System.ArgumentNullException("Login");
             }
@@ -8529,6 +9082,187 @@ SELECT Id, UserId, Date, DurationMin, Notes, ProgramId, TotalVolume FROM Workout
         public virtual WorkoutDiaryDBDataSet.ProgramExercisesViewDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             WorkoutDiaryDBDataSet.ProgramExercisesViewDataTable dataTable = new WorkoutDiaryDBDataSet.ProgramExercisesViewDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class ExerciseProgressTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public ExerciseProgressTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "ExerciseProgress";
+            tableMapping.ColumnMappings.Add("ExerciseName", "ExerciseName");
+            tableMapping.ColumnMappings.Add("TotalSets", "TotalSets");
+            tableMapping.ColumnMappings.Add("TotalReps", "TotalReps");
+            tableMapping.ColumnMappings.Add("MaxWeight", "MaxWeight");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::WorkoutDiary.Properties.Settings.Default.WorkoutDiaryDBConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = @"SELECT e.Name AS ExerciseName,
+       COUNT(s.Id) AS TotalSets,
+       SUM(s.Reps) AS TotalReps,
+       MAX(s.Weight) AS MaxWeight
+FROM Sets s
+JOIN Workouts w ON w.Id = s.WorkoutId
+JOIN Exercises e ON e.Id = s.ExerciseId
+WHERE w.UserId = @UserId
+GROUP BY e.Name";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "UserId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int FillProgress(WorkoutDiaryDBDataSet.ExerciseProgressDataTable dataTable, int UserId) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(UserId));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual WorkoutDiaryDBDataSet.ExerciseProgressDataTable GetProgress(int UserId) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(UserId));
+            WorkoutDiaryDBDataSet.ExerciseProgressDataTable dataTable = new WorkoutDiaryDBDataSet.ExerciseProgressDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }

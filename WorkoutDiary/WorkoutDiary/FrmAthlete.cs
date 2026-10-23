@@ -22,10 +22,16 @@ namespace WorkoutDiary
         private readonly UsersTableAdapter usersAdapter = new UsersTableAdapter();
         private readonly SetsTableAdapter setsAdapter = new SetsTableAdapter();
 
-       
 
+        private void LoadProgramCard()
+        {
+            
+            dgvDay.AutoGenerateColumns = false;
+
+        }
         private void LoadExerciseProgress()
         {
+            
             dvgExerciseProgress.DataSource = progressAdapter.GetProgress(userId);
         }
 
@@ -38,6 +44,7 @@ namespace WorkoutDiary
             LoadStatistics();
             LoadExerciseProgress();
             pageHome.BringToFront();
+            LoadProgramCard();
 
 
             userId = id;
@@ -159,6 +166,11 @@ namespace WorkoutDiary
         private void btnWorkouts_Click_1(object sender, EventArgs e)
         {
             pageWorkouts.BringToFront();
+        }
+
+        private void btnCompleteDay_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

@@ -18,4 +18,3 @@ D:\307\Скв Гал\WorkoutDiary\WorkoutDiary\WorkoutDiary\obj\Debug\WorkoutDia
 D:\307\Скв Гал\WorkoutDiary\WorkoutDiary\WorkoutDiary\obj\Debug\WorkoutD.F0F3375E.Up2Date
 D:\307\Скв Гал\WorkoutDiary\WorkoutDiary\WorkoutDiary\obj\Debug\WorkoutDiary.exe
 D:\307\Скв Гал\WorkoutDiary\WorkoutDiary\WorkoutDiary\obj\Debug\WorkoutDiary.pdb
-D:\307\Скв Гал\WorkoutDiary\WorkoutDiary\WorkoutDiary\obj\Debug\WorkoutDiary.exe.config

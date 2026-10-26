@@ -63,13 +63,6 @@ namespace WorkoutDiary
                     form.FormClosed += (s, args) => this.Show();
                     form.Show();
                 }
-                else if (role == "Admin")
-                {
-                    FrmAdmin form = new FrmAdmin(userId);
-                    this.Hide();
-                    form.FormClosed += (s, args) => this.Show();
-                    form.Show();
-                }
                 else
                 {
                     MessageBox.Show("Для этой роли окно пока не настроено.");

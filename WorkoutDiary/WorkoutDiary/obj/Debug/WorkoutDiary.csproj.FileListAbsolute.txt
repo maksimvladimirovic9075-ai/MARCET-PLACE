@@ -6,7 +6,6 @@ D:\307\Скв Гал\WorkoutDiary\WorkoutDiary\WorkoutDiary\bin\Debug\Material3.
 D:\307\Скв Гал\WorkoutDiary\WorkoutDiary\WorkoutDiary\bin\Debug\Material3.Core.xml
 D:\307\Скв Гал\WorkoutDiary\WorkoutDiary\WorkoutDiary\bin\Debug\Material3.WinForms.xml
 D:\307\Скв Гал\WorkoutDiary\WorkoutDiary\WorkoutDiary\obj\Debug\WorkoutDiary.csproj.AssemblyReference.cache
-D:\307\Скв Гал\WorkoutDiary\WorkoutDiary\WorkoutDiary\obj\Debug\WorkoutDiary.FrmAdmin.resources
 D:\307\Скв Гал\WorkoutDiary\WorkoutDiary\WorkoutDiary\obj\Debug\WorkoutDiary.FrmcardUser.resources
 D:\307\Скв Гал\WorkoutDiary\WorkoutDiary\WorkoutDiary\obj\Debug\WorkoutDiary.FrmLogin.resources
 D:\307\Скв Гал\WorkoutDiary\WorkoutDiary\WorkoutDiary\obj\Debug\WorkoutDiary.FrmAthlete.resources

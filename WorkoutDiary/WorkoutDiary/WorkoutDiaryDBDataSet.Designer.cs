@@ -66,12 +66,6 @@ namespace WorkoutDiary {
         
         private global::System.Data.DataRelation relationProgramView_ProgramExercisesView;
         
-        private global::System.Data.DataRelation relationFK__AssignedP__Athle__6FE99F9F;
-        
-        private global::System.Data.DataRelation relationFK__AssignedP__Progr__70DDC3D8;
-        
-        private global::System.Data.DataRelation relationFK__Workouts__Assign__74AE54BC;
-        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -470,9 +464,6 @@ namespace WorkoutDiary {
             this.relationFK_Workouts_Users = this.Relations["FK_Workouts_Users"];
             this.relationFK_ProgramExercises_Programs1 = this.Relations["FK_ProgramExercises_Programs1"];
             this.relationProgramView_ProgramExercisesView = this.Relations["ProgramView_ProgramExercisesView"];
-            this.relationFK__AssignedP__Athle__6FE99F9F = this.Relations["FK__AssignedP__Athle__6FE99F9F"];
-            this.relationFK__AssignedP__Progr__70DDC3D8 = this.Relations["FK__AssignedP__Progr__70DDC3D8"];
-            this.relationFK__Workouts__Assign__74AE54BC = this.Relations["FK__Workouts__Assign__74AE54BC"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -545,18 +536,6 @@ namespace WorkoutDiary {
                         this.tableProgramView.IdColumn}, new global::System.Data.DataColumn[] {
                         this.tableProgramExercisesView.ProgramIdColumn}, false);
             this.Relations.Add(this.relationProgramView_ProgramExercisesView);
-            this.relationFK__AssignedP__Athle__6FE99F9F = new global::System.Data.DataRelation("FK__AssignedP__Athle__6FE99F9F", new global::System.Data.DataColumn[] {
-                        this.tableUsers.IdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableAssignedPrograms.AthleteIdColumn}, false);
-            this.Relations.Add(this.relationFK__AssignedP__Athle__6FE99F9F);
-            this.relationFK__AssignedP__Progr__70DDC3D8 = new global::System.Data.DataRelation("FK__AssignedP__Progr__70DDC3D8", new global::System.Data.DataColumn[] {
-                        this.tablePrograms.IdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableAssignedPrograms.ProgramIdColumn}, false);
-            this.Relations.Add(this.relationFK__AssignedP__Progr__70DDC3D8);
-            this.relationFK__Workouts__Assign__74AE54BC = new global::System.Data.DataRelation("FK__Workouts__Assign__74AE54BC", new global::System.Data.DataColumn[] {
-                        this.tableAssignedPrograms.IdColumn}, new global::System.Data.DataColumn[] {
-                        this.tableWorkouts.AssignmentIdColumn}, false);
-            this.Relations.Add(this.relationFK__Workouts__Assign__74AE54BC);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2881,7 +2860,7 @@ namespace WorkoutDiary {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public WorkoutsRow AddWorkoutsRow(UsersRow parentUsersRowByFK_Workouts_Users, System.DateTime Date, int DurationMin, string Notes, ProgramsRow parentProgramsRowByFK_Workouts_Programs, decimal TotalVolume, AssignedProgramsRow parentAssignedProgramsRowByFK__Workouts__Assign__74AE54BC, int DayNumber) {
+            public WorkoutsRow AddWorkoutsRow(UsersRow parentUsersRowByFK_Workouts_Users, System.DateTime Date, int DurationMin, string Notes, ProgramsRow parentProgramsRowByFK_Workouts_Programs, decimal TotalVolume, int AssignmentId, int DayNumber) {
                 WorkoutsRow rowWorkoutsRow = ((WorkoutsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -2891,16 +2870,13 @@ namespace WorkoutDiary {
                         Notes,
                         null,
                         TotalVolume,
-                        null,
+                        AssignmentId,
                         DayNumber};
                 if ((parentUsersRowByFK_Workouts_Users != null)) {
                     columnValuesArray[1] = parentUsersRowByFK_Workouts_Users[0];
                 }
                 if ((parentProgramsRowByFK_Workouts_Programs != null)) {
                     columnValuesArray[5] = parentProgramsRowByFK_Workouts_Programs[0];
-                }
-                if ((parentAssignedProgramsRowByFK__Workouts__Assign__74AE54BC != null)) {
-                    columnValuesArray[7] = parentAssignedProgramsRowByFK__Workouts__Assign__74AE54BC[0];
                 }
                 rowWorkoutsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowWorkoutsRow);
@@ -4258,24 +4234,18 @@ namespace WorkoutDiary {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public AssignedProgramsRow AddAssignedProgramsRow(UsersRow parentUsersRowByFK__AssignedP__Athle__6FE99F9F, ProgramsRow parentProgramsRowByFK__AssignedP__Progr__70DDC3D8, System.DateTime AssignedDate, bool IsCompleted, System.DateTime CompletedDate, string ProgramName, string TrainerName, int DurationWeeks) {
+            public AssignedProgramsRow AddAssignedProgramsRow(int AthleteId, int ProgramId, System.DateTime AssignedDate, bool IsCompleted, System.DateTime CompletedDate, string ProgramName, string TrainerName, int DurationWeeks) {
                 AssignedProgramsRow rowAssignedProgramsRow = ((AssignedProgramsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        null,
-                        null,
+                        AthleteId,
+                        ProgramId,
                         AssignedDate,
                         IsCompleted,
                         CompletedDate,
                         ProgramName,
                         TrainerName,
                         DurationWeeks};
-                if ((parentUsersRowByFK__AssignedP__Athle__6FE99F9F != null)) {
-                    columnValuesArray[1] = parentUsersRowByFK__AssignedP__Athle__6FE99F9F[0];
-                }
-                if ((parentProgramsRowByFK__AssignedP__Progr__70DDC3D8 != null)) {
-                    columnValuesArray[2] = parentProgramsRowByFK__AssignedP__Progr__70DDC3D8[0];
-                }
                 rowAssignedProgramsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowAssignedProgramsRow);
                 return rowAssignedProgramsRow;
@@ -4931,17 +4901,6 @@ namespace WorkoutDiary {
                     return ((WorkoutsRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Workouts_Programs"])));
                 }
             }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public AssignedProgramsRow[] GetAssignedProgramsRows() {
-                if ((this.Table.ChildRelations["FK__AssignedP__Progr__70DDC3D8"] == null)) {
-                    return new AssignedProgramsRow[0];
-                }
-                else {
-                    return ((AssignedProgramsRow[])(base.GetChildRows(this.Table.ChildRelations["FK__AssignedP__Progr__70DDC3D8"])));
-                }
-            }
         }
         
         /// <summary>
@@ -5176,17 +5135,6 @@ namespace WorkoutDiary {
                     return ((WorkoutsRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Workouts_Users"])));
                 }
             }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public AssignedProgramsRow[] GetAssignedProgramsRows() {
-                if ((this.Table.ChildRelations["FK__AssignedP__Athle__6FE99F9F"] == null)) {
-                    return new AssignedProgramsRow[0];
-                }
-                else {
-                    return ((AssignedProgramsRow[])(base.GetChildRows(this.Table.ChildRelations["FK__AssignedP__Athle__6FE99F9F"])));
-                }
-            }
         }
         
         /// <summary>
@@ -5341,17 +5289,6 @@ namespace WorkoutDiary {
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_Workouts_Users"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public AssignedProgramsRow AssignedProgramsRow {
-                get {
-                    return ((AssignedProgramsRow)(this.GetParentRow(this.Table.ParentRelations["FK__Workouts__Assign__74AE54BC"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Workouts__Assign__74AE54BC"]);
                 }
             }
             
@@ -5900,28 +5837,6 @@ namespace WorkoutDiary {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public UsersRow UsersRow {
-                get {
-                    return ((UsersRow)(this.GetParentRow(this.Table.ParentRelations["FK__AssignedP__Athle__6FE99F9F"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__AssignedP__Athle__6FE99F9F"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ProgramsRow ProgramsRow {
-                get {
-                    return ((ProgramsRow)(this.GetParentRow(this.Table.ParentRelations["FK__AssignedP__Progr__70DDC3D8"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__AssignedP__Progr__70DDC3D8"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsCompletedDateNull() {
                 return this.IsNull(this.tableAssignedPrograms.CompletedDateColumn);
             }
@@ -5966,17 +5881,6 @@ namespace WorkoutDiary {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetDurationWeeksNull() {
                 this[this.tableAssignedPrograms.DurationWeeksColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public WorkoutsRow[] GetWorkoutsRows() {
-                if ((this.Table.ChildRelations["FK__Workouts__Assign__74AE54BC"] == null)) {
-                    return new WorkoutsRow[0];
-                }
-                else {
-                    return ((WorkoutsRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Workouts__Assign__74AE54BC"])));
-                }
             }
         }
         
@@ -7626,11 +7530,17 @@ SELECT Id, Name, AuthorId, Description, DurationWeeks FROM Programs WHERE (Id = 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Id, Name, AuthorId, Description, DurationWeeks FROM dbo.Programs";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT Id, Name, AuthorId, Description, DurationWeeks FROM Programs WHERE AuthorI" +
+                "d = @AuthorId";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AuthorId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "AuthorId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7652,6 +7562,32 @@ SELECT Id, Name, AuthorId, Description, DurationWeeks FROM Programs WHERE (Id = 
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual WorkoutDiaryDBDataSet.ProgramsDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            WorkoutDiaryDBDataSet.ProgramsDataTable dataTable = new WorkoutDiaryDBDataSet.ProgramsDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByAuthor(WorkoutDiaryDBDataSet.ProgramsDataTable dataTable, int AuthorId) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(AuthorId));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual WorkoutDiaryDBDataSet.ProgramsDataTable GetDataByAuthor(int AuthorId) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(AuthorId));
             WorkoutDiaryDBDataSet.ProgramsDataTable dataTable = new WorkoutDiaryDBDataSet.ProgramsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -8003,7 +7939,7 @@ SELECT Id, WorkoutId, ExerciseId, SetNumber, Weight, Reps, RestSec FROM Sets WHE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[6];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[7];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Id, WorkoutId, ExerciseId, SetNumber, Weight, Reps, RestSec FROM dbo.Sets";
@@ -8025,28 +7961,34 @@ ORDER BY e.Name";
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "UserId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT COUNT(DISTINCT s.ExerciseId)\r\nFROM Sets s\r\nINNER JOIN Workouts w ON s.Work" +
-                "outId = w.Id\r\nWHERE w.UserId = @UserId";
+            this._commandCollection[2].CommandText = "SELECT Id, WorkoutId, ExerciseId, SetNumber, Weight, Reps, RestSec FROM Sets WHER" +
+                "E WorkoutId = @WorkoutId ORDER BY ExerciseId, SetNumber";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "UserId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@WorkoutId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "WorkoutId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT COUNT(*)\r\nFROM dbo.Sets s\r\nINNER JOIN dbo.Workouts w ON w.Id = s.WorkoutId" +
-                "\r\nWHERE w.UserId = @UserId";
+            this._commandCollection[3].CommandText = "SELECT COUNT(DISTINCT s.ExerciseId)\r\nFROM Sets s\r\nINNER JOIN Workouts w ON s.Work" +
+                "outId = w.Id\r\nWHERE w.UserId = @UserId";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "UserId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = "SELECT COALESCE(SUM(CAST(s.Weight AS decimal(18,2)) * s.Reps), 0)\r\nFROM dbo.Sets " +
-                "s\r\nINNER JOIN dbo.Workouts w ON w.Id = s.WorkoutId\r\nWHERE w.UserId = @UserId";
+            this._commandCollection[4].CommandText = "SELECT COUNT(*)\r\nFROM dbo.Sets s\r\nINNER JOIN dbo.Workouts w ON w.Id = s.WorkoutId" +
+                "\r\nWHERE w.UserId = @UserId";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "UserId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = "SELECT COUNT(DISTINCT s.ExerciseId)\r\nFROM dbo.Sets s\r\nINNER JOIN dbo.Workouts w O" +
-                "N w.Id = s.WorkoutId\r\nWHERE w.UserId = @UserId";
+            this._commandCollection[5].CommandText = "SELECT COALESCE(SUM(CAST(s.Weight AS decimal(18,2)) * s.Reps), 0)\r\nFROM dbo.Sets " +
+                "s\r\nINNER JOIN dbo.Workouts w ON w.Id = s.WorkoutId\r\nWHERE w.UserId = @UserId";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "UserId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[6].Connection = this.Connection;
+            this._commandCollection[6].CommandText = "SELECT COUNT(DISTINCT s.ExerciseId)\r\nFROM dbo.Sets s\r\nINNER JOIN dbo.Workouts w O" +
+                "N w.Id = s.WorkoutId\r\nWHERE w.UserId = @UserId";
+            this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "UserId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8094,6 +8036,32 @@ ORDER BY e.Name";
         public virtual WorkoutDiaryDBDataSet.SetsDataTable GetExerciseProgress(int UserId) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(UserId));
+            WorkoutDiaryDBDataSet.SetsDataTable dataTable = new WorkoutDiaryDBDataSet.SetsDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByWorkout(WorkoutDiaryDBDataSet.SetsDataTable dataTable, int WorkoutId) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(WorkoutId));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual WorkoutDiaryDBDataSet.SetsDataTable GetDataByWorkout(int WorkoutId) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(WorkoutId));
             WorkoutDiaryDBDataSet.SetsDataTable dataTable = new WorkoutDiaryDBDataSet.SetsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -8230,35 +8198,6 @@ ORDER BY e.Name";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual global::System.Nullable<int> GetExerciseCount(int UserId) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
-            command.Parameters[0].Value = ((int)(UserId));
-            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
-            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                command.Connection.Open();
-            }
-            object returnValue;
-            try {
-                returnValue = command.ExecuteScalar();
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    command.Connection.Close();
-                }
-            }
-            if (((returnValue == null) 
-                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
-                return new global::System.Nullable<int>();
-            }
-            else {
-                return new global::System.Nullable<int>(((int)(returnValue)));
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual global::System.Nullable<int> GetTotalSets(int UserId) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
             command.Parameters[0].Value = ((int)(UserId));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
@@ -8287,8 +8226,37 @@ ORDER BY e.Name";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual global::System.Nullable<decimal> GetTotalVolume(int UserId) {
+        public virtual global::System.Nullable<int> GetTotalSets(int UserId) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[4];
+            command.Parameters[0].Value = ((int)(UserId));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return new global::System.Nullable<int>();
+            }
+            else {
+                return new global::System.Nullable<int>(((int)(returnValue)));
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual global::System.Nullable<decimal> GetTotalVolume(int UserId) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[5];
             command.Parameters[0].Value = ((int)(UserId));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -8317,7 +8285,7 @@ ORDER BY e.Name";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual global::System.Nullable<int> GetUniqueExercises(int UserId) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[5];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[6];
             command.Parameters[0].Value = ((int)(UserId));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -8524,7 +8492,7 @@ SELECT Id, Login, PasswordHash, FullName, Role, TrainerId FROM Users WHERE (Id =
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[7];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[8];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Id, Login, PasswordHash, FullName, Role, TrainerId FROM dbo.Users";
@@ -8551,24 +8519,30 @@ SELECT Id, Login, PasswordHash, FullName, Role, TrainerId FROM Users WHERE (Id =
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Role", global::System.Data.SqlDbType.NVarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "Role", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = "SELECT Id, Login, PasswordHash, FullName, Role, TrainerId FROM dbo.Users";
+            this._commandCollection[4].CommandText = "SELECT Id, Login, PasswordHash, FullName, Role, TrainerId FROM Users WHERE Traine" +
+                "rId = @TrainerId";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TrainerId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "TrainerId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = "SELECT Id, Login, PasswordHash, FullName, Role, TrainerId\r\nFROM Users\r\nWHERE Id =" +
-                " @UserId";
+            this._commandCollection[5].CommandText = "SELECT Id, Login, PasswordHash, FullName, Role, TrainerId FROM dbo.Users";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[6].Connection = this.Connection;
-            this._commandCollection[6].CommandText = "INSERT INTO dbo.Users (Login, PasswordHash, FullName, Role, TrainerId)\r\nVALUES (@" +
-                "Login, @PasswordHash, @FullName, @Role, @TrainerId)";
+            this._commandCollection[6].CommandText = "SELECT Id, Login, PasswordHash, FullName, Role, TrainerId\r\nFROM Users\r\nWHERE Id =" +
+                " @UserId";
             this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Login", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Login", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PasswordHash", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "PasswordHash", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FullName", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "FullName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Role", global::System.Data.SqlDbType.NVarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "Role", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TrainerId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "TrainerId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[7].Connection = this.Connection;
+            this._commandCollection[7].CommandText = "INSERT INTO dbo.Users (Login, PasswordHash, FullName, Role, TrainerId)\r\nVALUES (@" +
+                "Login, @PasswordHash, @FullName, @Role, @TrainerId)";
+            this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Login", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Login", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PasswordHash", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "PasswordHash", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FullName", global::System.Data.SqlDbType.NVarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "FullName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Role", global::System.Data.SqlDbType.NVarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "Role", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TrainerId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "TrainerId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8707,8 +8681,44 @@ SELECT Id, Login, PasswordHash, FullName, Role, TrainerId FROM Users WHERE (Id =
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillUsers(WorkoutDiaryDBDataSet.UsersDataTable dataTable) {
+        public virtual int FillByTrainer(WorkoutDiaryDBDataSet.UsersDataTable dataTable, global::System.Nullable<int> TrainerId) {
             this.Adapter.SelectCommand = this.CommandCollection[4];
+            if ((TrainerId.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(TrainerId.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual WorkoutDiaryDBDataSet.UsersDataTable GetDataByTrainer(global::System.Nullable<int> TrainerId) {
+            this.Adapter.SelectCommand = this.CommandCollection[4];
+            if ((TrainerId.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(TrainerId.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            WorkoutDiaryDBDataSet.UsersDataTable dataTable = new WorkoutDiaryDBDataSet.UsersDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillUsers(WorkoutDiaryDBDataSet.UsersDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[5];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -8721,7 +8731,7 @@ SELECT Id, Login, PasswordHash, FullName, Role, TrainerId FROM Users WHERE (Id =
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual WorkoutDiaryDBDataSet.UsersDataTable GetUsersData() {
-            this.Adapter.SelectCommand = this.CommandCollection[4];
+            this.Adapter.SelectCommand = this.CommandCollection[5];
             WorkoutDiaryDBDataSet.UsersDataTable dataTable = new WorkoutDiaryDBDataSet.UsersDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -8732,7 +8742,7 @@ SELECT Id, Login, PasswordHash, FullName, Role, TrainerId FROM Users WHERE (Id =
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual WorkoutDiaryDBDataSet.UsersDataTable GetUserInfo(int UserId) {
-            this.Adapter.SelectCommand = this.CommandCollection[5];
+            this.Adapter.SelectCommand = this.CommandCollection[6];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(UserId));
             WorkoutDiaryDBDataSet.UsersDataTable dataTable = new WorkoutDiaryDBDataSet.UsersDataTable();
             this.Adapter.Fill(dataTable);
@@ -9005,7 +9015,7 @@ SELECT Id, Login, PasswordHash, FullName, Role, TrainerId FROM Users WHERE (Id =
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
         public virtual int InsertUser(string Login, string PasswordHash, string FullName, string Role, global::System.Nullable<int> TrainerId) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[6];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[7];
             if ((Login == null)) {
                 throw new global::System.ArgumentNullException("Login");
             }
@@ -9254,7 +9264,7 @@ SELECT Id, UserId, Date, DurationMin, Notes, ProgramId, TotalVolume, AssignmentI
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[5];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[6];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Id, UserId, Date, DurationMin, Notes, ProgramId, TotalVolume, AssignmentId" +
@@ -9263,7 +9273,7 @@ SELECT Id, UserId, Date, DurationMin, Notes, ProgramId, TotalVolume, AssignmentI
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = @"INSERT INTO Workouts (UserId, Date, DurationMin, Notes, ProgramId, TotalVolume, AssignmentId, DayNumber)
-SELECT @UserId, GETDATE(), 0, N'День ' + CAST(@DayNumber AS NVARCHAR(5)), ProgramId, 0, @AssignmentId, @DayNumber
+SELECT @UserId, GETDATE(), 60, N'День ' + CAST(@DayNumber AS NVARCHAR(5)), ProgramId, 0, @AssignmentId, @DayNumber
 FROM AssignedPrograms WHERE Id = @AssignmentId";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserId", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -9271,21 +9281,27 @@ FROM AssignedPrograms WHERE Id = @AssignmentId";
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AssignmentId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT TOP (10) AssignmentId, Date, DayNumber, DurationMin, Id, Notes, ProgramId," +
-                " TotalVolume, UserId FROM Workouts WHERE (UserId = @UserId) ORDER BY Date DESC, " +
-                "Id DESC";
+            this._commandCollection[2].CommandText = "SELECT Id, UserId, Date, DurationMin, Notes, ProgramId, TotalVolume, AssignmentId" +
+                ", DayNumber\r\nFROM Workouts WHERE UserId = @UserId ORDER BY Date DESC, Id DESC";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "UserId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT MAX([Date])\r\nFROM dbo.Workouts\r\nWHERE UserId = @UserId";
+            this._commandCollection[3].CommandText = "SELECT TOP (10) AssignmentId, Date, DayNumber, DurationMin, Id, Notes, ProgramId," +
+                " TotalVolume, UserId FROM Workouts WHERE (UserId = @UserId) ORDER BY Date DESC, " +
+                "Id DESC";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "UserId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = "SELECT COUNT(*) FROM Workouts WHERE UserId = @UserId";
+            this._commandCollection[4].CommandText = "SELECT MAX([Date])\r\nFROM dbo.Workouts\r\nWHERE UserId = @UserId";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "UserId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[5].Connection = this.Connection;
+            this._commandCollection[5].CommandText = "SELECT COUNT(*) FROM Workouts WHERE UserId = @UserId";
+            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "UserId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9316,7 +9332,7 @@ FROM AssignedPrograms WHERE Id = @AssignmentId";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillRecentWorkouts(WorkoutDiaryDBDataSet.WorkoutsDataTable dataTable, int UserId) {
+        public virtual int FillByUser(WorkoutDiaryDBDataSet.WorkoutsDataTable dataTable, int UserId) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(UserId));
             if ((this.ClearBeforeFill == true)) {
@@ -9330,8 +9346,34 @@ FROM AssignedPrograms WHERE Id = @AssignmentId";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual WorkoutDiaryDBDataSet.WorkoutsDataTable GetRecentWorkouts(int UserId) {
+        public virtual WorkoutDiaryDBDataSet.WorkoutsDataTable GetDataByUser(int UserId) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(UserId));
+            WorkoutDiaryDBDataSet.WorkoutsDataTable dataTable = new WorkoutDiaryDBDataSet.WorkoutsDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillRecentWorkouts(WorkoutDiaryDBDataSet.WorkoutsDataTable dataTable, int UserId) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(UserId));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual WorkoutDiaryDBDataSet.WorkoutsDataTable GetRecentWorkouts(int UserId) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(UserId));
             WorkoutDiaryDBDataSet.WorkoutsDataTable dataTable = new WorkoutDiaryDBDataSet.WorkoutsDataTable();
             this.Adapter.Fill(dataTable);
@@ -9644,7 +9686,7 @@ FROM AssignedPrograms WHERE Id = @AssignmentId";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual object GetLastWorkoutDate(int UserId) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[4];
             command.Parameters[0].Value = ((int)(UserId));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -9673,7 +9715,7 @@ FROM AssignedPrograms WHERE Id = @AssignmentId";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual global::System.Nullable<int> GetWorkoutCount(int UserId) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[4];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[5];
             command.Parameters[0].Value = ((int)(UserId));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -10022,12 +10064,16 @@ FROM AssignedPrograms WHERE Id = @AssignmentId";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT Id, ProgramId, DayNumber, OrderNum, ExerciseName, Equipment, TargetSets, T" +
-                "argetReps\r\nFROM ProgramExercisesView\r\nWHERE ProgramId = @ProgramId AND DayNumber" +
-                " = @DayNumber\r\nORDER BY OrderNum";
+            this._commandCollection[1].CommandText = @"SELECT pe.Id, pe.ProgramId, pe.DayNumber, pe.OrderNum,
+       e.Name AS ExerciseName, e.Equipment, pe.TargetSets, pe.TargetReps
+FROM ProgramExercises pe
+JOIN Exercises e ON e.Id = pe.ExerciseId
+WHERE pe.ProgramId = @ProgramId AND pe.DayNumber = @DayNumber
+ORDER BY pe.OrderNum
+";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ProgramId", global::System.Data.SqlDbType.Variant, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "ProgramId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DayNumber", global::System.Data.SqlDbType.Variant, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "DayNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ProgramId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ProgramId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DayNumber", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "DayNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10058,20 +10104,10 @@ FROM AssignedPrograms WHERE Id = @AssignmentId";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByDay(WorkoutDiaryDBDataSet.ProgramExercisesViewDataTable dataTable, object ProgramId, object DayNumber) {
+        public virtual int FillByDay(WorkoutDiaryDBDataSet.ProgramExercisesViewDataTable dataTable, int ProgramId, int DayNumber) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((ProgramId == null)) {
-                throw new global::System.ArgumentNullException("ProgramId");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((object)(ProgramId));
-            }
-            if ((DayNumber == null)) {
-                throw new global::System.ArgumentNullException("DayNumber");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((object)(DayNumber));
-            }
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(ProgramId));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(DayNumber));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -10083,20 +10119,10 @@ FROM AssignedPrograms WHERE Id = @AssignmentId";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual WorkoutDiaryDBDataSet.ProgramExercisesViewDataTable GetDataByDay(object ProgramId, object DayNumber) {
+        public virtual WorkoutDiaryDBDataSet.ProgramExercisesViewDataTable GetDataByDay(int ProgramId, int DayNumber) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((ProgramId == null)) {
-                throw new global::System.ArgumentNullException("ProgramId");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((object)(ProgramId));
-            }
-            if ((DayNumber == null)) {
-                throw new global::System.ArgumentNullException("DayNumber");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((object)(DayNumber));
-            }
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(ProgramId));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(DayNumber));
             WorkoutDiaryDBDataSet.ProgramExercisesViewDataTable dataTable = new WorkoutDiaryDBDataSet.ProgramExercisesViewDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -10463,49 +10489,61 @@ SELECT Id, AthleteId, ProgramId, AssignedDate, IsCompleted, CompletedDate FROM A
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[5];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[7];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT        AssignedPrograms.*\r\nFROM            AssignedPrograms";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"UPDATE AssignedPrograms SET Status = N'Completed'
+            this._commandCollection[1].CommandText = "INSERT INTO AssignedPrograms (AthleteId, ProgramId, AssignedDate, IsCompleted) VA" +
+                "LUES (@AthleteId, @ProgramId, GETDATE(), 0)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AthleteId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "AthleteId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ProgramId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ProgramId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "UPDATE AssignedPrograms SET IsCompleted = 1, CompletedDate = GETDATE() WHERE Athl" +
+                "eteId = @AthleteId AND IsCompleted = 0";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AthleteId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "AthleteId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = @"UPDATE AssignedPrograms SET IsCompleted = 1, CompletedDate = GETDATE()
 WHERE Id = @AssignmentId
 AND NOT EXISTS (
   SELECT 1 FROM ProgramExercises pe
   WHERE pe.ProgramId = AssignedPrograms.ProgramId
   AND pe.DayNumber NOT IN (SELECT DayNumber FROM Workouts WHERE AssignmentId = @AssignmentId AND DayNumber IS NOT NULL))";
-            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AssignmentId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = @"SELECT TOP 1 ap.Id, ap.ProgramId, ap.StartDate, ap.Status,
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AssignmentId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = @"SELECT TOP 1 ap.Id, ap.AthleteId, ap.ProgramId, ap.AssignedDate, ap.IsCompleted, ap.CompletedDate,
        p.Name AS ProgramName, p.DurationWeeks,
        t.FullName AS TrainerName
 FROM AssignedPrograms ap
 JOIN Programs p ON p.Id = ap.ProgramId
 JOIN Users a ON a.Id = ap.AthleteId
 LEFT JOIN Users t ON t.Id = a.TrainerId
-WHERE ap.AthleteId = @AthleteId AND ap.Status = N'Active'
-ORDER BY ap.Id DESC
-";
-            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AthleteId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "AthleteId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT MIN(pe.DayNumber)\r\nFROM ProgramExercises pe\r\nJOIN AssignedPrograms ap ON a" +
+WHERE ap.AthleteId = @AthleteId AND ap.IsCompleted = 0
+ORDER BY ap.Id DESC";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AthleteId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "AthleteId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[5].Connection = this.Connection;
+            this._commandCollection[5].CommandText = "SELECT MIN(pe.DayNumber)\r\nFROM ProgramExercises pe\r\nJOIN AssignedPrograms ap ON a" +
                 "p.ProgramId = pe.ProgramId\r\nWHERE ap.Id = @AssignmentId\r\nAND pe.DayNumber NOT IN" +
                 " (SELECT DayNumber FROM Workouts WHERE AssignmentId = @AssignmentId AND DayNumbe" +
                 "r IS NOT NULL)";
-            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AssignmentId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = "SELECT COUNT(DISTINCT DayNumber) FROM ProgramExercises WHERE ProgramId = @Program" +
+            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AssignmentId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[6].Connection = this.Connection;
+            this._commandCollection[6].CommandText = "SELECT COUNT(DISTINCT DayNumber) FROM ProgramExercises WHERE ProgramId = @Program" +
                 "Id";
-            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ProgramId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ProgramId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ProgramId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ProgramId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10537,7 +10575,7 @@ ORDER BY ap.Id DESC
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillCurrent(WorkoutDiaryDBDataSet.AssignedProgramsDataTable dataTable, int AthleteId) {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand = this.CommandCollection[4];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(AthleteId));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -10551,7 +10589,7 @@ ORDER BY ap.Id DESC
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual WorkoutDiaryDBDataSet.AssignedProgramsDataTable GetCurrent(int AthleteId) {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand = this.CommandCollection[4];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(AthleteId));
             WorkoutDiaryDBDataSet.AssignedProgramsDataTable dataTable = new WorkoutDiaryDBDataSet.AssignedProgramsDataTable();
             this.Adapter.Fill(dataTable);
@@ -10708,9 +10746,58 @@ ORDER BY ap.Id DESC
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
+        public virtual int AssignProgram(int AthleteId, int ProgramId) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            command.Parameters[0].Value = ((int)(AthleteId));
+            command.Parameters[1].Value = ((int)(ProgramId));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int CloseActive(int AthleteId) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            command.Parameters[0].Value = ((int)(AthleteId));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
         public virtual int CloseIfDone(int AssignmentId) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
             command.Parameters[0].Value = ((int)(AssignmentId));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -10733,7 +10820,7 @@ ORDER BY ap.Id DESC
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual global::System.Nullable<int> GetNextDay(int AssignmentId) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[5];
             command.Parameters[0].Value = ((int)(AssignmentId));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -10762,7 +10849,7 @@ ORDER BY ap.Id DESC
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual global::System.Nullable<int> GetTotalDays(int ProgramId) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[4];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[6];
             command.Parameters[0].Value = ((int)(ProgramId));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -11051,15 +11138,6 @@ ORDER BY ap.Id DESC
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._programsTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Programs.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._programsTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._muscleGroupsTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.MuscleGroups.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -11069,12 +11147,12 @@ ORDER BY ap.Id DESC
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._assignedProgramsTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.AssignedPrograms.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._programsTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Programs.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._assignedProgramsTableAdapter.Update(updatedRows));
+                    result = (result + this._programsTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -11114,6 +11192,15 @@ ORDER BY ap.Id DESC
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._assignedProgramsTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.AssignedPrograms.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._assignedProgramsTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             return result;
         }
         
@@ -11132,14 +11219,6 @@ ORDER BY ap.Id DESC
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._programsTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Programs.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._programsTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._muscleGroupsTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.MuscleGroups.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -11148,11 +11227,11 @@ ORDER BY ap.Id DESC
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._assignedProgramsTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.AssignedPrograms.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._programsTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Programs.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._assignedProgramsTableAdapter.Update(addedRows));
+                    result = (result + this._programsTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -11188,6 +11267,14 @@ ORDER BY ap.Id DESC
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._assignedProgramsTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.AssignedPrograms.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._assignedProgramsTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             return result;
         }
         
@@ -11198,6 +11285,14 @@ ORDER BY ap.Id DESC
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private int UpdateDeletedRows(WorkoutDiaryDBDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
+            if ((this._assignedProgramsTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.AssignedPrograms.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._assignedProgramsTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._setsTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Sets.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -11230,11 +11325,11 @@ ORDER BY ap.Id DESC
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._assignedProgramsTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.AssignedPrograms.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._programsTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Programs.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._assignedProgramsTableAdapter.Update(deletedRows));
+                    result = (result + this._programsTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -11243,14 +11338,6 @@ ORDER BY ap.Id DESC
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._muscleGroupsTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._programsTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Programs.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._programsTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }

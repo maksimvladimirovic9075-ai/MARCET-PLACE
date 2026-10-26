@@ -12,47 +12,27 @@ using WorkoutDiary.WorkoutDiaryDBDataSetTableAdapters;
 namespace WorkoutDiary
 {
     public partial class FrmAthlete : Form
-    {
-
-        
-        private int userId;
-
-    
+    {        
+        private int userId;    
         private readonly ExerciseProgressTableAdapter progressAdapter = new ExerciseProgressTableAdapter();
         private readonly UsersTableAdapter usersAdapter = new UsersTableAdapter();
-        private readonly SetsTableAdapter setsAdapter = new SetsTableAdapter();
-
-
-        private void LoadProgramCard()
-        {
-            
-            dgvDay.AutoGenerateColumns = false;
-
-        }
+        private readonly SetsTableAdapter setsAdapter = new SetsTableAdapter();      
         private void LoadExerciseProgress()
-        {
-            
+        {           
             dvgExerciseProgress.DataSource = progressAdapter.GetProgress(userId);
         }
-
         public FrmAthlete(int id)
         {
             InitializeComponent();
             userId = id;
-
             LoadPersonalInfo();
             LoadStatistics();
             LoadExerciseProgress();
             pageHome.BringToFront();
             LoadProgramCard();
-
-
             userId = id;
             try
             {
-                //LoadRecentWorkouts();
-                //MessageBox.Show("История тренировок загружена");
-
                 LoadWorkoutCount();
                 LoadLastWorkout();
                 LoadExerciseCount();
@@ -94,18 +74,15 @@ namespace WorkoutDiary
             this.btnWorkouts.Click += new System.EventHandler(this.btnWorkouts_Click_1);
             LoadPersonalInfo();
             LoadStatistics();
-            
             // TODO: данная строка кода позволяет загрузить данные в таблицу "workoutDiaryDBDataSet1.ProgramExercisesView". При необходимости она может быть перемещена или удалена.
             this.programExercisesViewTableAdapter.Fill(this.workoutDiaryDBDataSet1.ProgramExercisesView);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "workoutDiaryDBDataSet1.ProgramView". При необходимости она может быть перемещена или удалена.
             this.programViewTableAdapter.Fill(this.workoutDiaryDBDataSet1.ProgramView);
-
         }
         private void lblLastWorkout_Click(object sender, EventArgs e)
         {
 
         }
-      
         private void btnExercises_Click(object sender, EventArgs e)
         {
             pageExercises.BringToFront();
@@ -124,12 +101,10 @@ namespace WorkoutDiary
         {
             Close();
         }
-
         private void lblFullNameTitle_Click(object sender, EventArgs e)
         {
 
         }
-
         private void LoadPersonalInfo()
         {
             var users = usersAdapter.GetUserInfo(userId);
@@ -148,7 +123,6 @@ namespace WorkoutDiary
             lblRoleTitle.Text = "Роль: " + user.Role;
             lblPasswordValue.Text = "Пароль: защищён";
         }
-
         private void LoadStatistics()
         {
             lblTotalSetsValue.Text =
@@ -160,17 +134,44 @@ namespace WorkoutDiary
             lblUniquercisesValue.Text =
                 Convert.ToInt32(setsAdapter.GetExerciseCount(userId)).ToString();
         }
-
-
-        
         private void btnWorkouts_Click_1(object sender, EventArgs e)
         {
             pageWorkouts.BringToFront();
         }
-
         private void btnCompleteDay_Click(object sender, EventArgs e)
         {
-            
+            new WorkoutsTableAdapter().CompleteDay(userId.ToString(), dayNumber.ToString(), assignmentId);
+            new AssignedProgramsTableAdapter().CloseIfDone(assignmentId);
+            LoadProgramCard();
+        }
+        private int assignmentId, programId, dayNumber;
+        private void LoadProgramCard()
+        {
+            dgvDay.AutoGenerateColumns = false;
+            btnCompleteDay.Enabled = false;
+            dgvDay.DataSource = null;
+
+            var ap = new AssignedProgramsTableAdapter();
+            var t = ap.GetCurrent(userId);
+            if (t.Count == 0)
+            {
+                lblProgram.Text = "Программа не назначена";
+                return;
+            }
+            assignmentId = t[0].Id;
+            programId = t[0].ProgramId;
+            lblProgram.Text = t[0].ProgramName;
+            lblTrainer.Text = "Ваш тренер: " + t[0].TrainerName;
+
+            dayNumber = Convert.ToInt32(ap.GetNextDay(assignmentId));
+            if (dayNumber == 0)
+            {
+                lblDay.Text = "Программа завершена";
+                return;
+            }
+            lblDay.Text = "День " + dayNumber + " из " + ap.GetTotalDays(programId);
+            dgvDay.DataSource = new ProgramExercisesViewTableAdapter().GetDataByDay(programId, dayNumber);
+            btnCompleteDay.Enabled = true;
         }
     }
 }

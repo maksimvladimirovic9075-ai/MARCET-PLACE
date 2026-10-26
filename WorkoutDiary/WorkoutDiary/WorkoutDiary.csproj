@@ -53,12 +53,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FrmAdmin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmAdmin.Designer.cs">
-      <DependentUpon>FrmAdmin.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmcardUser.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -99,9 +93,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>WorkoutDiaryDBDataSet.xsd</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FrmAdmin.resx">
-      <DependentUpon>FrmAdmin.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmcardUser.resx">
       <DependentUpon>FrmcardUser.cs</DependentUpon>
     </EmbeddedResource>
